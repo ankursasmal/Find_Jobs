@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300;1,400&display=swap');
+@media (max-width:769px) {
+ .hide{
+    display: block;
+    visibility: hidden;
+ }
+ .hide a{
+    text-decoration: none;
+    
+} 
+}
+ @media (max-width:550px) {
+    body{
+       display:flex;
+       justify-content: center;
+    }
+    nav {
+ visibility: hidden;       
+   }  
+     
+} 
+ 
