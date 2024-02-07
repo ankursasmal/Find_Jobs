@@ -15,7 +15,7 @@
     
     <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid ">
-          <img class="navbar-brand" src="./nav.png" height="20px",width="100px"/>
+          <img class="navbar-brand" src="./nav.png" height="25px",width="130px"/>
            
           <div class="d-flex" style="align-items: center;justify-content: space-between; border: .5px solid black;width: auto;border-radius: 5px;">
                 
@@ -25,10 +25,18 @@
                     <input class=" me-2" style="border: none;outline: none;" type="search"  placeholder="secarch for you faviorit work" >
                                 </form>
                 </div>
- 
+                <div class="d-flex" style="align-items: center;justify-content: space-between; ">
+
                <a id="modeladd" style="border:none ;outline: none;background-color: white" data-bs-toggle="modal" data-bs-target="#idModal">Create account! It free</a>
-       </nav>
-  
+                </div>
+                
+
+                </nav>
+  <div id="three" class="d-flex padding-bottom:15px" style="right: 0px ;justify-content: right ;align-items: center;" >
+                    <i class="fa-solid fa-arrow-left mx-4" style="font-size: large;"></i>
+                    <i class="fa-solid fa-circle " style="font-size: large;"></i>
+                    <i class="fa-solid fa-arrow-right mx-4" style="font-size: large;"></i>   
+                </div>
 
   <!--create Modal -->
   <div class="modal fade" id="idModal" tabindex="-1" aria-labelledby="idModalLabel" aria-hidden="true">
@@ -49,24 +57,23 @@
 
                                                <a style="padding-bottom: 5px;">Create Account</a>
 
-                                <form action="">
+                                <form id="form1" onsubmit="vaild()" action="./index2.html"  >
                                 <div class="d-flex " style="flex-direction: column;padding-top: 5px;">
 
                                 <div class="d-flex" style="align-items: center;flex-direction: row;">
-<input style="width: 50%;" type="text"  placeholder="Frist name">
+<input id="n1" style="width: 50%;" type="text"  placeholder="Frist name">
 
-<input style="width: 50%;" type="text"  placeholder="Last name">
+<input id="n2" style="width: 50%;" type="text"  placeholder="Last name">
 
                                 </div>
-                                <input  type="email" placeholder="Email">
-                                <input  type="password" placeholder="Password">
-                                <input  type="password" name="" id="" placeholder="Confirm password">
+                                <input id="n3" type="email" placeholder="Email">
+                                <input id="n4" type="password" placeholder="Password"  maxlength="30" minlength="8">
+                                <input id="n5" type="password" name="" id="" placeholder="Confirm password">
 
-                                <a href="index2.html">
-                                     
+                                      
  
-                                <button  id="redirect" class="btn btn-primary">Create Account</button>
-</a>
+                                <button  id="redirect" class="btn btn-primary" type="submit" >Create Account</button>
+
                                 </div>
 
                               </form>
@@ -78,7 +85,7 @@
 <i class="fa-brands fa-google"></i>                             
        <a>Sign up with Google</a>
                                     </div>
-
+ 
                                 
 
 
@@ -90,9 +97,9 @@
     
     <div class="container mb-10">
         <div class="d-flex" style="flex-direction: column;align-items: center;justify-content: space-between;">
-            <span>Already have an account? </span>
+            <b >Already have an account? </b> <a href="./index3.html">   Sign in</a>
+
             <!-- <span style="color: blue;"  id="dModal" data-bs-toggle="modal" data-bs-target="#dModal" aria-labelledby="dModalLabel" aria-hidden="true">Sing in</span> -->
-           <span>Sign in</span>
         <img src="./side.png" alt="" height="200px" width="95%">
 <a>By signing up, you agree to our Terms & conditions, Privacy policy</a>
     </div>
@@ -109,76 +116,7 @@
     </div>
   </div>
   </div>
-  <!-- sign up -->
-<div class="modal fade" id="dModal" tabindex="-1" aria-labelledby="dModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title fs-5" id="dModalLabel">Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="container">
-                <div class="d-flex" style="flex-direction: column;align-items: center;justify-content: space-between;">
-                      <div class="row row-col-1 row-col-md-2">
- 
-                        <!-- frist -->
-                        <div class="col col-md-6" > 
-                            <div class="d-flex" style=" flex-direction: column;">
-
-                                               <a style="padding-bottom: 5px;">Sign up</a>
-
-                                <form action="">
-                                <div class="d-flex " style="flex-direction: column;padding-top: 5px;">
-
-                               
-                                <input  type="email" placeholder="Email">
-                                <input  type="password" placeholder="Password">
- <a href="./index2.html"> <button class="btn btn-primary">Sign up</button></a>
-
-                                </div>
-
-                              </form>
-                              <div class="d-flex" style="align-items: center; padding:10px 2px; border: .55px solid black;">
-                                <i class="fa-brands fa-facebook"></i>
-                                <a>Sign up with Facebook</a>
-                                </div>
-                                <div class="d-flex" style="align-items: center; padding: 5px; border: .55px solid black;">
-<i class="fa-brands fa-google"></i>                             
-       <a>Sign up with Google</a>
-       <a>Forgot password</a>
-                                    </div>
-
-                                
-
-
-</div>
-</div>
-
-<!-- second -->
-<div class="col col-md-6" >
-    
-    <div class="container mb-10">
-        <div class="d-flex" style="flex-direction: column;align-items: center;justify-content: space-between;">
-            <a>Don’t have an account yet? Create new for free!</a>
-           
-        <img src="./side.png" alt="" height="200px" width="95%">
-<a>By signing up, you agree to our Terms & conditions, Privacy policy</a>
-    </div>
-</div>
-
-</div> 
-
- </div>
- </div>
-         </div>
-        <div class="modal-footer">
-          </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</header>
+  </header>
     <!--  -->
     <main>
     <!-- fullwidth img like carsol -->
@@ -457,11 +395,8 @@ Write a post        </button>
     <footer>
 
     </footer>
-<script>
-    document.getElementById("redirect").addEventListener("click", function() {
-    window.location.href = "./index2.html"; // Redirect to the create account page
-});
-</script>
+<script src="a.js">
+ </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>

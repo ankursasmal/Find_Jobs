@@ -9,14 +9,45 @@
     
 } 
 }
- @media (max-width:550px) {
+ /* @media (max-width:380px) {
     body{
        display:flex;
        justify-content: center;
+       align-items: center;
     }
-    nav {
- visibility: hidden;       
-   }  
+      
      
+}  */
+@media (max-width:550px) {
+   body{
+ font-size: 6px;
+   }
+   
+     
+    
 } 
+nav{
+   top: 0px;
+   position: fixed;
+   background-color: white;
+}
  
+@media (min-width: 575.98px) { 
+#three{
+       visibility: hidden;
+   }
+ 
+}
+@media (max-width: 575.98px) { 
+   nav {
+      display: block;
+visibility: hidden;       
+  } 
+  
+}
+
+a{
+  text-decoration: none;
+}
+
+
