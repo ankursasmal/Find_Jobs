@@ -17,17 +17,17 @@
         <div class="container-fluid ">
           <img class="navbar-brand" src="./nav.png" height="25px",width="130px"/>
            
-          <div class="d-flex" style="align-items: center;justify-content: space-between; border: .5px solid black;width: auto;border-radius: 5px;">
+          <div class="d-flex rounded-pill" style="align-items: center;justify-content: space-between; border: .5px solid black;width: auto;height: 40px;">
                 
 
-                                 <form class="d-flex" role="search" style="align-items: center; justify-content: space-between;">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input class=" me-2" style="border: none;outline: none;" type="search"  placeholder="secarch for you faviorit work" >
-                                </form>
+                                 <!-- <form class="d-flex" role="search" style="align-items: center; justify-content: space-around;"> -->
+                                    <i class="fa-solid fa-magnifying-glass" style="padding:0px 15px;"></i>
+                    <input class=" me-2" style="border: none;outline: none;width: 225px;" type="search"  placeholder="secarch for you faviorit work"  >
+                                <!-- </form> -->
                 </div>
                 <div class="d-flex" style="align-items: center;justify-content: space-between; ">
 
-               <a id="modeladd" style="border:none ;outline: none;background-color: white" data-bs-toggle="modal" data-bs-target="#idModal">Create account! It free</a>
+               <a id="modeladd" style="border:none ;outline: none;background-color: white"  >Create account. <a data-bs-toggle="modal" data-bs-target="#idModal" style="color: rgb(34, 54, 232);">  It free</a></a>
                 </div>
                 
 
@@ -43,7 +43,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title fs-5" id="idModalLabel">Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</h3>
+          <h3 class="modal-title " id="idModalLabel" >Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</h3>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -57,7 +57,7 @@
 
                                                <a style="padding-bottom: 5px;">Create Account</a>
 
-                                <form id="form1" onsubmit="vaild()" action="./index2.html"  >
+                                <form id="form1" onsubmit="vaild()" action="./main.html"  >
                                 <div class="d-flex " style="flex-direction: column;padding-top: 5px;">
 
                                 <div class="d-flex" style="align-items: center;flex-direction: row;">
@@ -67,23 +67,26 @@
 
                                 </div>
                                 <input id="n3" type="email" placeholder="Email">
-                                <input id="n4" type="password" placeholder="Password"  maxlength="30" minlength="8">
-                                <input id="n5" type="password" name="" id="" placeholder="Confirm password">
+                               <div class="d-flex" style="border: .5px soild black !important;align-items: center;flex-direction: row; justify-content: space-between;  padding: 5px 7px;"> 
+                                 <input id="n4" type="password"   placeholder="Password"  maxlength="30" minlength="8">
+                                  <i class="fa-regular fa-eye"></i>
+                            </div>
+                                <input id="n5" type="password" name="" placeholder="Confirm password">
 
                                       
  
-                                <button  id="redirect" class="btn btn-primary" type="submit" >Create Account</button>
+                                <button  id="redirect" class="btn rounded-pill btn-primary" type="submit" >Create Account</button>
 
                                 </div>
 
                               </form>
-                              <div class="d-flex" style="align-items: center; padding:10px 2px; border: .55px solid black;">
+                              <div class="d-flex" style="align-items: center;justify-content: center; margin:15px 1px; border: .55px solid black; padding: 6px 0;">
                                 <i class="fa-brands fa-facebook"></i>
-                                <a>Sign up with Facebook</a>
+                                <a id="createtxt">Sign up with Facebook</a>
                                 </div>
-                                <div class="d-flex" style="align-items: center; padding: 5px; border: .55px solid black;">
+                                <div class="d-flex" style="align-items: center; justify-content: center;margin-bottom: 15px; border: .55px solid black;padding: 6px 0;">
 <i class="fa-brands fa-google"></i>                             
-       <a>Sign up with Google</a>
+       <a id="createtxt">Sign up with Google</a>
                                     </div>
  
                                 
@@ -97,11 +100,11 @@
     
     <div class="container mb-10">
         <div class="d-flex" style="flex-direction: column;align-items: center;justify-content: space-between;">
-            <b >Already have an account? </b> <a href="./index3.html">   Sign in</a>
+            <i class="txt1">Already have an account? </i> <a class="txt4" href="./SignIn.html">   Sign in</a>
 
             <!-- <span style="color: blue;"  id="dModal" data-bs-toggle="modal" data-bs-target="#dModal" aria-labelledby="dModalLabel" aria-hidden="true">Sing in</span> -->
         <img src="./side.png" alt="" height="200px" width="95%">
-<a>By signing up, you agree to our Terms & conditions, Privacy policy</a>
+<a id="createtxt2">By signing up, you agree to our Terms & conditions, Privacy policy</a>
     </div>
 </div>
 
@@ -122,16 +125,22 @@
     <!-- fullwidth img like carsol -->
 <section>
 <div class="img-fluid">
-    <img src="https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=emTV0l4j8raEIhyu6fr6~dCFxBDy2JdiYTtk~iTYmhrq3LFAse3-iTxqk95zgv9tbjU5isatuKEjGZUqbIfe~zkauJjop~xtxrlUEXe66HRVZJVdv6Xmr3CiRM5gWoYNJt8LZnWbXtVaGsIqWkJiGccNr5ziVnidVTw1aeoGfQqI5UxCFlXbpR65pHhXTVFJxuthBsv-kmOCLk~ZzD0TgwcSTuQtZlG820N2~wtE4lOdoWQuWCwfXZgBEEJ4g1FU4pmb76m8ENQtRws4U4kXycd1U3fL9dn0cDRqQP2nOGoVDag1NFGIu~JtbVm02GbnoEbY7HL8bHLCtP7jDGG2Gg__" alt=""  width="100%" height="400px">
-</div>
+<img id="fullimg" src="./fullimg.jpeg" alt="" width="100%" height="450px">   
+ 
+
+    <!-- <img src="https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=emTV0l4j8raEIhyu6fr6~dCFxBDy2JdiYTtk~iTYmhrq3LFAse3-iTxqk95zgv9tbjU5isatuKEjGZUqbIfe~zkauJjop~xtxrlUEXe66HRVZJVdv6Xmr3CiRM5gWoYNJt8LZnWbXtVaGsIqWkJiGccNr5ziVnidVTw1aeoGfQqI5UxCFlXbpR65pHhXTVFJxuthBsv-kmOCLk~ZzD0TgwcSTuQtZlG820N2~wtE4lOdoWQuWCwfXZgBEEJ4g1FU4pmb76m8ENQtRws4U4kXycd1U3fL9dn0cDRqQP2nOGoVDag1NFGIu~JtbVm02GbnoEbY7HL8bHLCtP7jDGG2Gg__" alt=""  width="100%" height="400px"> -->
+     <a id="backword">Computer Engineering</a>
+<p id="imgtxt">142,765 Computer Engineers follow this</p>
+ </div>
+
 </section>
 <!-- second bar for post -->
 <section class="hide">
     <div class="container mb-10">
         <div class="d-flex" style="align-items: center;justify-content: space-between;">
 
-<div class="d-flex" style="align-items: center;justify-content: space-between;">
-    <a  >All post(32)</a>
+<div id="imgbutton" class="d-flex"  >
+    <a style="color: black;" >All post(32)</a>
 <a class="px-2">Article</a>
 <a class="px-2">Events</a>
 <a class="px-2">Education</a>
@@ -140,7 +149,7 @@
 </div>
 <div class="d-flex" style="align-items: center;justify-content: space-between;">
     <div class="dropdown">
-        <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button id="dropdown1" class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 Write a post        </button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="#">Action</a></li>
@@ -148,8 +157,8 @@ Write a post        </button>
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
-      <button class="btn btn-primery" style="border: .3px solid black; padding: 2px;">
-      <span class="d-flex" style="align-items: center;justify-content: space-between;"><i class="fa-regular fa-user"></i> Join Group</span>
+      <button id="btn1" >
+      <span class="d-flex" ><i class="fa-regular fa-user"></i> Join Group</span>
 
       </button>
 </div>
@@ -166,18 +175,19 @@ Write a post        </button>
             <div class="col col-md-8" >
                 <!-- img contaiiner -->
                 <!-- frist -->
-                <div class="img-fluid" style="border: 1px solid black;">
-                    <img src="https://s3-alpha-sig.figma.com/img/8f0b/5f52/59515bfc8d2d4ff8928be097376153e9?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FimPf2MohsDUMJ3V0S24lqwDaAEOOj470agcv6GPPtVgiUoti7day5XdYte5yvaWTsLSIb3Aby6-a90ZPezIz7jRUAHoHCDbml~kW-kDXzDi8bO4FfAe69krGvVlQDTBo0pZq8L97M846XeJn9xTJlZx0sUJoKA4kTMqHr142fBju3M9VG~u6424HJNLBiTam7EabFxQOAilxEAYTeTU6iFuGnf96j~SrBQsXmpdKUlF7daQ25ht1M~n-j-odCeO9SmOv9IN8V5E0tP2R0sUWoi~H5tHFPTcVcWEHsrNR6iuNAO32vLhszmiSqeRNnHWjdaym7BkAnSDqBWojsJdhw__" alt=""  width="100%" height="100px">
+                <div class="chatbox"  > 
+                <div class="img-fluid " >
+                    <img src="./img1.jpeg" alt=""    width="100%" height="200px">
                 </div>
-                <div class="container mb-10">
+                <div class="container mb-10 ">
                     <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
                         <button class="btn btn-primery">
-                            <span class="d-flex" style="align-items: center;border: .5px solid black; width: 73px;"><i class="fa-regular fa-message"></i>Artical</span>
+                            <span class="d-flex" style="align-items: center;  width: 77px;"><i class="fa-regular fa-message mar1"></i>Artical</span>
                       
                             </button>
                             <div class="d-flex" style="align-items: center;justify-content: space-between;">
-                             <b>What if famous brands had regular fonts? Meet RegulaBrands!</b>
-                             <button class="btn  " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <b id="img1tex">What if famous brands had regular fonts? Meet<p> RegulaBrands!</p></b>
+                             <button class="btn  " id="hide" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-ellipsis"></i>   </button>
                                               <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -185,39 +195,40 @@ Write a post        </button>
                                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                                               </ul>
                                             </div>                                           </div>
-                            <a>I’ve worked in UX for the better part of a decade. From now on, I plan to rei…</a>
+                            <a id="txt11">I’ve worked in UX for the better part of a decade. From now on, I plan to rei…</a>
 
-                     <div class="d-flex" style="justify-content: space-between;align-items: center;">
-                        <div class="d-flex" style="justify-content: space-between;align-items: center;">
-                            <img src="https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=emTV0l4j8raEIhyu6fr6~dCFxBDy2JdiYTtk~iTYmhrq3LFAse3-iTxqk95zgv9tbjU5isatuKEjGZUqbIfe~zkauJjop~xtxrlUEXe66HRVZJVdv6Xmr3CiRM5gWoYNJt8LZnWbXtVaGsIqWkJiGccNr5ziVnidVTw1aeoGfQqI5UxCFlXbpR65pHhXTVFJxuthBsv-kmOCLk~ZzD0TgwcSTuQtZlG820N2~wtE4lOdoWQuWCwfXZgBEEJ4g1FU4pmb76m8ENQtRws4U4kXycd1U3fL9dn0cDRqQP2nOGoVDag1NFGIu~JtbVm02GbnoEbY7HL8bHLCtP7jDGG2Gg__" alt=""  width="20px" height="20px" style="border-radius: 50%;" />
+                     <div class="d-flex imgtag"  >
+                        <div class="d-flex imgtag"  >
+                            <img class="profile1" src="./ankur.jpeg" alt=""  width="40px" height="40px" style="border-radius: 50%;" />
                      <a>Sarthak Kamra  </a>
                     </div>
-                    <div class="d-flex" style="justify-content: space-between;align-items: center;">
-                        <div class="d-flex" style="justify-content: space-around;align-items: center; ">
+                    <div class="d-flex imgtag"  >
+                        <div class="d-flex profile1 imgtag"  >
                             <i class="fa-regular fa-eye"></i>
-                            <a >1.4k view</a>
+                            <a class="view">1.4k view</a>
                     </div> 
-                                    <i class="fa-solid fa-square-share-nodes"></i>  
+                                    <i class="fa-solid fa-2x  fa-square-share-nodes"></i>  
    
                     </div>
 
 </div>
 </div>
-            <!-- second messsage -->
-            <div class="img-fluid "  style="border: 1px solid black;padding-top: 10px;">
-                <img src="https://s3-alpha-sig.figma.com/img/8f0b/5f52/59515bfc8d2d4ff8928be097376153e9?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FimPf2MohsDUMJ3V0S24lqwDaAEOOj470agcv6GPPtVgiUoti7day5XdYte5yvaWTsLSIb3Aby6-a90ZPezIz7jRUAHoHCDbml~kW-kDXzDi8bO4FfAe69krGvVlQDTBo0pZq8L97M846XeJn9xTJlZx0sUJoKA4kTMqHr142fBju3M9VG~u6424HJNLBiTam7EabFxQOAilxEAYTeTU6iFuGnf96j~SrBQsXmpdKUlF7daQ25ht1M~n-j-odCeO9SmOv9IN8V5E0tP2R0sUWoi~H5tHFPTcVcWEHsrNR6iuNAO32vLhszmiSqeRNnHWjdaym7BkAnSDqBWojsJdhw__" alt=""  width="100%" height="100px">
+      </div>      <!-- second messsage -->
+      <div class="chatbox"> 
+            <div class="img-fluid "  >
+                <img src="./img2.jpeg" alt=""  width="100%" height="200px">
             </div>
             <div class="container mb-10">
                 <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
                     <button class="btn btn-primery">
-                        <span class="d-flex" style="align-items: center;border: .5px solid black; width: 90px;"><i class="fa-regular fa-message"></i>Education</span>
+                        <span class="d-flex" style="align-items: center; width: 100px;"><i class="fa-regular fa-message  mar1" ></i>Education</span>
                   
                         </button>
                         <div class="d-flex" style="align-items: center;justify-content: space-between;">
-<b>
-    Tax Benefits for Investment under National Pension Scheme launched by Government
+<b id="img1tex">
+    Tax Benefits for Investment under National Pension<p >  Scheme launched by Government</p>
 </b>                         <div class="dropdown">
-                            <button class="btn  " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn  " id="hide" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-ellipsis"></i>   </button>
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="#">Action</a></li>
@@ -226,70 +237,88 @@ Write a post        </button>
                             </ul>
                           </div>                
                                       </div>
-                        <a>I’ve worked in UX for the better part of a decade. From now on, I plan to rei…</a>
+                        <a id="txt11">I’ve worked in UX for the better part of a decade. From now on, I plan to rei…</a>
 
-                 <div class="d-flex" style="justify-content: space-between;align-items: center;">
-                    <div class="d-flex" style="justify-content: space-between;align-items: center;">
-                        <img src="https://s3-alpha-sig.figma.com/img/c20f/9a59/15d7211204149d93adda6dfafb5d81f2?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=o3iK5lEWV1ED9BTVfgOW5Wc5AhX6BTAT~saVTufcdW9uaaAKu6i2UEsK-8zw7u8cciib~PJZgyzIKRfvzVOdp6lnSughRkFQsAsdhlb9lFUIsILzxDIoiQ1rzIeq1C26jXq4fVZyZ2OQVskxr5yo6c~xkKA7ZjB4~I4dn46J3dk3Cj9O6TwQzkFP-rSTXODq68yAu47zmCqzRLdS2AUDmhMpxixi2j3w9aebxZ1aIgtKnkR3fFYmq3WS8t9Lm3oTDnVG1cr7U1w3Z-2mwTNNgWg9TLyWoi9ZM4-52mx9MNQC8XsSi2EhIbf0HLwRXAQDahZhOtqiQ62FR9u0sVZYyg__" alt=""  width="20px" height="20px" style="border-radius: 50%;" />
+                 <div class="d-flex imgtag"  >
+                    <div class="d-flex imgtag"  >
+                        <img class="profile1" src="./ankur.jpeg" alt=""  width="40px" height="40px" style="border-radius: 50%;" />
                  <a>Sarah West </a>
                 </div>
                 <div class="d-flex" style="justify-content: space-between;align-items: center;">
-                    <div class="d-flex" style="justify-content: space-around;align-items: center; ">
+                    <div class="d-flex imgtag profile1"  >
                         <i class="fa-regular fa-eye"></i>
-                        <a >1.4k view</a>
+                        <a class="view">1.4k view</a>
                 </div> 
                   
-                                   <i class="fa-solid fa-square-share-nodes"></i>  
+                                   <i class="fa-solid fa-2x fa-square-share-nodes"></i>  
       </div>
 
 </div>
 </div>
   </div>
+  </div>
 <!-- third message -->
+<div class="chatbox"> 
+
 <div class="img-fluid" >
-    <img src="https://s3-alpha-sig.figma.com/img/bdc0/79a9/a2e530610a1b91c9682ba7889c87c1b2?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QrjWBwe91rbBoIFw0diADmI0wZFXQvVLT8SYLjGowhPONuxIvGsLomtsnOnkkj1kDc6-TOvkWOK4JH2Mx7ctX2xTOS3AFw~DquyF8mr3SQ9jzjHw2VrYSO-RUQbCF0jiT-eQ733yOfVm0iFf8LmXuIgrMxgF-tPHqndLbCC4YTyx9Iwxy1Djx~rNassgQPWtVFby0msfsk0Av6gCc7LKwd9K0HhUZZjVdb9GaM7C6Cs0UkEl~1TSXo6j-6Couy-gm5534h6vPJB1EkuHXkn4lM3v2ZbqRT1GsFi2j-CJ2X-x1y6uXYt9QmInm-NrWiFSM2zYgsbcZvZpReNsp5s2LA__" alt=""  width="100%" height="100px">
+    <img src="./img3.jpeg" alt=""  width="100%" height="200px">
 </div>
 <div class="container mb-10">
     <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
         <button class="btn btn-primery">
-            <span class="d-flex" style="align-items: center;border: .5px solid black; width: 90px;"><i class="fa-regular fa-message"></i>Meet up</span>
+            <span class="d-flex" style="align-items: center;  width: 95px;"><i class="fa-regular fa-message  mar1"></i>Meet up</span>
       
             </button>
-            <div class="d-flex" style="align-items: center;justify-content: space-between;">
-             <b>What if famous brands had regular fonts? Meet RegulaBrands!</b>
-             <button class="btn  " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-ellipsis"></i>   </button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                              </ul>
-                            </div>                           </div>
-            <a>I’ve worked in UX for the better part of a decade. From now on, I plan to rei…</a>
+          
+                 <div class="d-flex" style="padding: 15px 0px; justify-content: space-around;flex-direction: column;">
+                     
+                        <div class="d-flex" style="align-items: center;justify-content: space-between;">
+                         <b id="img1tex">Finance & Investment Elite Social Mixer @Lujiazui</b>
+                         <button class="btn  " type="button" id="hide" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-ellipsis"></i>   </button>
+                                          <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                          </ul>
+                                        </div>                        
+                           </div>
+                        <!-- <a>I’ve worked in UX for the better part of a decade. From now on, I plan to rei…</a> -->
+                        <div class="d-flex" style="justify-content: space-between;align-items: center; padding-bottom: 15px;" >
+                        <input type="datetime-local">
+                        <div class="d-flex" style=" align-items: center; padding-bottom: 5px;" >
+            
+                        <i class="fa-solid fa-location-pin"></i>
+                        <a>Ahmedabad, India</a>
+                        </div>  
+                                              <P></P> 
+            
 
-     <div class="d-flex" style="justify-content: space-between;align-items: center;">
-        <div class="d-flex" style="justify-content: space-between;align-items: center;">
-            <img src="https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=emTV0l4j8raEIhyu6fr6~dCFxBDy2JdiYTtk~iTYmhrq3LFAse3-iTxqk95zgv9tbjU5isatuKEjGZUqbIfe~zkauJjop~xtxrlUEXe66HRVZJVdv6Xmr3CiRM5gWoYNJt8LZnWbXtVaGsIqWkJiGccNr5ziVnidVTw1aeoGfQqI5UxCFlXbpR65pHhXTVFJxuthBsv-kmOCLk~ZzD0TgwcSTuQtZlG820N2~wtE4lOdoWQuWCwfXZgBEEJ4g1FU4pmb76m8ENQtRws4U4kXycd1U3fL9dn0cDRqQP2nOGoVDag1NFGIu~JtbVm02GbnoEbY7HL8bHLCtP7jDGG2Gg__" alt=""  width="20px" height="20px" style="border-radius: 50%;" />
+                        </div>
+                        <div class="d-flex" style="justify-content: center; align-items: center; padding-bottom: 7px;">
+                            <button class="btn btn-outline-primary" style="width: 100%; border-radius: 6px;">view</button>
+            </div>
+            <div class="d-flex imgtag"  >
+        <div class="d-flex imgtag"  >
+            <img class="profile1" src="./ankur.jpeg" alt=""  width="40px" height="40px" style="border-radius: 50%;" />
      <a>Sarthak Kamra  </a>
     </div>
     <div class="d-flex" style="justify-content: space-between;align-items: center;">
-        <div class="d-flex" style="justify-content: space-around;align-items: center; ">
+        <div class="d-flex imgtag profile1" style="justify-content: space-around;align-items: center; ">
             <i class="fa-regular fa-eye"></i>
-            <a >1.4k view</a>
+            <a class="view">1.4k view</a>
     </div> 
-          <i class="fa-solid fa-square-share-nodes"></i>
+          <i class="fa-solid fa-2x fa-square-share-nodes"></i>
 </div>
 
 </div>
 </div>
-
-<!-- forth -->
- <div class="container mb-10"  style=" padding-top: 10px";>
+</div>
+</div>
+ <!-- forth -->
+ <!-- <div class="container mb-10"  style=" padding-top: 10px";>
     <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
-        <button class="btn btn-primery">
-            <span class="d-flex" style="align-items: center;border: .5px solid black; width: 90px;"><i class="fa-regular fa-message"></i>Meet up</span>
-      
-            </button>
+         
             <div class="d-flex" style="align-items: center;justify-content: space-between;">
              <b>Finance & Investment Elite Social Mixer @Lujiazui</b>
              <button class="btn  " type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -327,17 +356,18 @@ Write a post        </button>
 </div>
 
 </div>
-</div>
+</div> -->
 <!-- fifth -->
+<div class="chatbox"> 
 <div class="container mb-10">
     <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
         <button class="btn btn-primery">
-            <span class="d-flex" style="align-items: center;border: .5px solid black; width: 60px;"><i class="fa-regular fa-message"></i>Job</span>
+            <span class="d-flex" style="align-items: center; width: 65px;"><i class="fa-regular fa-message mar1"></i>Job</span>
       
             </button>
             <div class="d-flex" style="align-items: center;justify-content: space-between;">
-             <b>Software Devolapment</b>
-             <button class="btn  " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <b id="img1tex">Software Devolapment</b>
+             <button class="btn  " type="button" id="hide" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-ellipsis"></i>   </button>
                               <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -346,42 +376,44 @@ Write a post        </button>
                               </ul>
                             </div>                        
                </div>
-            <a>I’ve worked in UX for the better part of a decade. From now on, I plan to rei…</a>
-            <div class="d-flex" style="justify-content: space-between;align-items: center; padding-bottom: 5px;" >
-            <input type="datetime-local">
-            <div class="d-flex" style="align-items: center; " >
+             <div class="d-flex" style="justify-content: space-between;align-items: center; padding-bottom: 5px;" >
+<a id="lasttxt">Innovaccer Analytics Private Ltd.</a>
+    <div class="d-flex" style="align-items: center; " >
                 <i class="fa-solid fa-location-pin"></i>
                 <a>Noida, India</a>
             </div>
             <p></p>
             </div>
-            <div class="d-flex" style="justify-content: center; align-items: center; padding-bottom: 7px;">
+            <div class="d-flex" style="justify-content: center; align-items: center; padding-bottom: 7px;padding-top: 10px;">
                 <button class="btn btn-outline-primary" style="width: 100%; border-radius: 6px;">view</button>
 </div>
-<div class="d-flex" style="justify-content: space-between;align-items: center;padding-bottom: 5px;">
-        <div class="d-flex" style="justify-content: space-between;align-items: center;">
-            <img src="https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=emTV0l4j8raEIhyu6fr6~dCFxBDy2JdiYTtk~iTYmhrq3LFAse3-iTxqk95zgv9tbjU5isatuKEjGZUqbIfe~zkauJjop~xtxrlUEXe66HRVZJVdv6Xmr3CiRM5gWoYNJt8LZnWbXtVaGsIqWkJiGccNr5ziVnidVTw1aeoGfQqI5UxCFlXbpR65pHhXTVFJxuthBsv-kmOCLk~ZzD0TgwcSTuQtZlG820N2~wtE4lOdoWQuWCwfXZgBEEJ4g1FU4pmb76m8ENQtRws4U4kXycd1U3fL9dn0cDRqQP2nOGoVDag1NFGIu~JtbVm02GbnoEbY7HL8bHLCtP7jDGG2Gg__" alt=""  width="20px" height="20px" style="border-radius: 50%;" />
+<div class="d-flex imgtag" style="justify-content: space-between;align-items: center;padding-bottom: 5px;">
+        <div class="d-flex imgtag" style="justify-content: space-between;align-items: center;">
+            <img class="profile1" src="./ankur.jpeg" alt=""  width="40px" height="40px" style="border-radius: 50%;" />
      <a>Sarthak Kamra  </a>
     </div>
-    <div class="d-flex" style="justify-content: space-between;align-items: center;">
-        <div class="d-flex" style="justify-content: space-around;align-items: center; ">
+    <div class="d-flex  style="justify-content: space-between;align-items: center;""  >
+        <div class="d-flex profile1 imgtag" >
             <i class="fa-regular fa-eye"></i>
-            <a >1.4k view</a>
+            <a class="view" >1.4k view</a>
     </div> 
-          <i class="fa-solid fa-square-share-nodes"></i>
+          <i class="fa-solid fa-2x fa-square-share-nodes"></i>
 </div>
 
 </div>
 </div>
 </div>
+ </div>
 
              <!-- small part -->
             <div class="col col-md-4" >
 <div class="container">
-    <div class="d-flex" style="align-items: center;justify-content: space-between;">
+    <div class="d-flex chatbox" style="align-items: center;justify-content: space-between;margin-top: 40px;">
+        <div class="imgtag2" > 
         <i class="fa-solid fa-location-pin"></i>
 
-        <input id="search" type="search" placeholder="search loaction" style="outline: none;border: none;" onchange="add" >
+        <input id="search" type="search" placeholder="search loaction" style="outline: none;border: none; " onchange="add" >
+        </div>
         <hr/>
         <i class="fa-solid fa-pen"></i>
 </div>
@@ -390,7 +422,9 @@ Write a post        </button>
         </div>
     </div>
     </div>
-</section>
+
+    
+ </section>
     </main>
     <footer>
 
