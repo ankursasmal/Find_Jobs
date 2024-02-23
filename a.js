@@ -142,7 +142,7 @@ let onsubmit4 = () => {
     })
 }
 
-function onsubmit() {
+function onsubmit2() {
     var email = document.getElementById("signemail").value;
     var password = document.getElementById("signpassword").value;
 
