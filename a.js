@@ -170,6 +170,8 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
+// for form validation
+
 function validateForm() {
     var firstName = document.getElementById("n1").value;
     var lastName = document.getElementById("n2").value;
@@ -177,12 +179,13 @@ function validateForm() {
     var password = document.getElementById("n4").value;
     var confirmPassword = document.getElementById("n5").value;
 
+     
     if (!firstName || !lastName || !email || !password || !confirmPassword) {
         alert("Please fill in all fields");
         return false;
     }
 
-    if (!isValidEmail(email)) {
+    if (email.length<11 || email[email.length-4]!=='.' ||email.substr(email.length-9,email.length-1)!=='gmail.com' ||email[email.length-10]!=='@'|| !isValidEmail(email)) {
         alert("Please enter a valid email address");
         return false;
     }
@@ -191,6 +194,7 @@ function validateForm() {
         alert("Passwords do not match");
         return false;
     }
+     
 
     if (password.length < 8 || password.length > 30) {
         alert("Password must be between 8 and 30 characters");
@@ -210,11 +214,11 @@ function validateForm() {
             alert('All fields must be filled out');
             return false;
         }
-
-        if (!isValidEmail(email)) {
+        if (email1.length<11 || email1[email1.length-4]!=='.' ||email1.substr(email1.length-9,email1.length-1)!=='gmail.com' ||email1[email1.length-10]!=='@'|| !isValidEmail(email1)) {
             alert("Please enter a valid email address");
             return false;
         }
+      
         if (password1.length < 8) {
             alert('Password must be at least 8 characters');
             return false;
