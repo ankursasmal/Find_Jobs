@@ -1,17 +1,21 @@
 let signInform = document.getElementById('signIn');
-
-let onsubmit = () => {
+let password = document.getElementById('n4');
+let cpassword = document.getElementById('n5');
+let pass = document.getElementById('pass');
+let cpass = document.getElementById('pass');
+ let onsubmit = () => {
     //2. event listener javatar post request kora hoccha
 
     signInform.addEventListener('submit', function (e) {
         e.preventDefault();
         let signInEmail = document.getElementById('signemail').value;
-        let signInpassword = document.getElementById('signpassword').value;
+        let signpassword = document.getElementById('signpassword').value;
+
         fetch("https://jsonplaceholder.typicode.com/posts", {
             method: 'POST',
             body: JSON.stringify({
                 signInEmail: signInEmail,
-                signInpassword: signInpassword,
+                signpassword: signpassword,
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -23,7 +27,7 @@ let onsubmit = () => {
             return res.json()
         })
             .then(function (data) {
-                console.log(data.signInEmail, data.signInpassword);
+                console.log(data.signInEmail, data.signpassword);
                 // let result=document.getElementById()
             })
 
@@ -43,6 +47,8 @@ let onsubmit1 = () => {
         let email = document.getElementById('n3').value;
         let password = document.getElementById('n4').value;
         let cpassword = document.getElementById('n5').value;
+          
+        
 
         fetch("https://jsonplaceholder.typicode.com/posts", {
             method: 'POST',
@@ -82,7 +88,7 @@ let onsubmit3 = () => {
         let email = document.getElementById('email').value;
         let password = document.getElementById('pass').value;
         let cpassword = document.getElementById('cpass').value;
-
+ 
         fetch("https://jsonplaceholder.typicode.com/posts", {
             method: 'POST',
             body: JSON.stringify({
@@ -193,5 +199,35 @@ function validateForm() {
 
     return true;
 }
+      function validateForm1() {
+         var firstName1 = document.getElementById('name').value;
+        var lastName1 = document.getElementById('lastname').value;
+        var email1 = document.getElementById('email').value;
+        var password1 = document.getElementById('pass').value;
+        var confirmPassword1 = document.getElementById('cpass').value;
+
+         if (firstName1 === '' || lastName1 === '' || email1 === '' || password1 === '' || confirmPassword1 === '') {
+            alert('All fields must be filled out');
+            return false;
+        }
+
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address");
+            return false;
+        }
+        if (password1.length < 8) {
+            alert('Password must be at least 8 characters');
+            return false;
+        }
+
+        if (password1 !== confirmPassword1) {
+            alert('Passwords do not match');
+            return false;
+        }
+
+ 
+        return true; 
+     }
+ 
 
  

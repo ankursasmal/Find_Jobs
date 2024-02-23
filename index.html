@@ -65,28 +65,28 @@
 
                                             <a style="padding-bottom: 5px;">Create Account</a>
 
-                                            <form id="form1" action="./main.html" onsubmit="return validateForm()">
+                                            <form id="form1" action="./main.html" onsubmit=" return onsubmit1()">
                                                 <div class="d-flex " style="flex-direction: column;padding-top: 5px;">
 
                                                     <div class="d-flex"
                                                         style="align-items: center;flex-direction: row;">
                                                         <input id="n1" style="width: 50%;" type="text"
-                                                            placeholder="Frist name">
+                                                            placeholder="Frist name" required minlength="1">
 
                                                         <input id="n2" style="width: 50%;" type="text"
-                                                            placeholder="Last name">
+                                                            placeholder="Last name" required minlength="1">
 
                                                     </div>
-                                                    <input id="n3" type="email" placeholder="Email">
+                                                    <input id="n3" type="email" placeholder="Email" required minlength="11">
                                                     <input id="n4" type="password" placeholder="Password" maxlength="30"
-                                                        minlength="8">
+                                                        minlength="8" required >
                                                     <input id="n5" type="password" name=""
                                                         placeholder="Confirm password">
 
 
 
                                                     <button id="redirect" class="btn rounded-pill btn-primary"
-                                                        type="submit" onsubmit=" return onsubmit1()">Create
+                                                        type="submit" onclick=" return  validateForm()">Create
                                                         Account</button>
  
                                                 </div>
@@ -152,30 +152,30 @@
                             <div class="d-flex" style=" flex-direction: column;">
 
 
-                                <form id="form2" action="./main.html">
+                                <form id="form2" action="./main.html" onsubmit=" return onsubmit3()">
                                     <div class="d-flex " style="flex-direction: column;padding-top: 5px;">
 
                                         <div class="d-flex"
                                             style="align-items: center;flex-direction: row;margin-bottom: 10px;">
                                             <input id="name" style="width: 50%;" type="text" placeholder="Frist name"
-                                                style=" padding: 5px 20px;">
+                                                style=" padding: 5px 20px;" required minlength="1">
 
                                             <input id="lastname" style="width: 50%;" type="text" placeholder="Last name"
-                                                style=" padding: 5px 20px;">
+                                                style=" padding: 5px 20px;" required minlength="1">
 
                                         </div>
                                         <input id="email" type="email" placeholder="Email"
-                                            style="padding: 5px 20px; margin-bottom:  10px ;">
+                                            style="padding: 5px 20px; margin-bottom:  10px ;" required minlength="11">
                                         <input id="pass" type="password" placeholder="Password" maxlength="30"
-                                            minlength="8" style="padding: 5px 20px; margin-bottom:  10px ;">
+                                            minlength="8" style="padding: 5px 20px; margin-bottom:  10px ;" required>
                                         <input id="cpass" type="password" name="" placeholder="Confirm password"
-                                            style="padding: 5px 20px ;">
+                                            style="padding: 5px 20px ; " required >
 
 
                                         <div class="d-flex" style="align-items: center;justify-content: space-around;">
 
                                             <button id="redirect" class="btn rounded-pill btn-primary" type="submit"
-                                                onsubmit=" return onsubmit3()">Create Account</button>
+                                                onclick=" return validateForm1()" >Create Account</button>
                                             <a href="./SignIn.html" style="font-size: 15px;">or, Sign In
                                             </a>
                                         </div>
