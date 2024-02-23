@@ -65,8 +65,9 @@
                                         <div class="d-flex" style=" flex-direction: column;">
 
                                             <a style="padding-bottom: 5px;">Sign up</a>
+                                         <!-- onsubmit event a postrequest -->
 
-                                            <form action="./main.html" id="signInform" onsubmit="return onsubmit2()">
+                                            <form action="./main.html" id="signInform"  onsubmit=" return onsubmit() ">
                                                 <div class="d-flex " style="flex-direction: column;padding-top: 5px;">
 
 
@@ -74,8 +75,10 @@
                                                         minlength="11" required>
                                                     <input id="signpassword" type="password" placeholder="Password"
                                                         minlength="8" maxlength="23" required>
+                                                        <!-- onclick event a validation -->
                                                     <button class="btn rounded-pill  btn-primary" type="submit"
-                                                        style="margin: 15px 0;" onsubmit=" return onsubmit()">Sign
+                                                    
+                                                        style="margin: 15px 0;"  onclick="return validateSignIn()">Sign
                                                         In</button>
 
                                                 </div>
@@ -143,7 +146,7 @@
                             <div class="d-flex" style=" flex-direction: column;padding-top: 5px;">
 
 
-                                <form action="./main.html" id="signInform1">
+                                <form action="./main.html" id="signInform1"  onsubmit=" return onsubmit4()">
                                     <div class="d-flex "
                                         style="flex-direction: column;padding-top: 5px; margin-bottom: 10px;">
 
@@ -155,7 +158,7 @@
                                         <div class="d-flex"
                                             style="align-items: center;justify-content: space-around;margin: 15px 0px;">
                                             <button class="btn rounded-pill  btn-primary" type="submit"
-                                                onsubmit=" return onsubmit4()">Sign In</button>
+                                              onclick="return validateSignIn1()"  >Sign In</button>
                                             <a href="./index.html" style="font-size: 14px;">or, Create Account
                                             </a>
                                         </div>
@@ -481,7 +484,7 @@
                                 style="align-items: center;justify-content: space-between;margin-top: 40px;">
                                 <div class="imgtag2">
                                     <img src="./outline-location_on-24px 2.png" alt="">
-                                    <input id="search" type="search" placeholder="search loaction"
+                                    <input id="searchbar" type="search" placeholder="search loaction"
                                         style="outline: none;border: none; " onchange="add">
                                 </div>
                                 <hr />
