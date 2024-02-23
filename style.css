@@ -1,63 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300;1,400&display=swap');
- 
+
 @media (min-width:769px) {
- #imgbtn1{
-   display: none;
+   #imgbtn1 {
+      display: none;
       visibility: hidden;
    }
-   .hide2{
-   display: none;
-   visibility: hidden;
-   height: 0px;
-  }
-  #three{
-   display: none !important;
-   visibility: hidden;
-  }
-  #circle{
-   display: none;
-   visibility: hidden;
- }
-   
-}
-@media (max-width:769px) {
-   #backword{
-      position: absolute;
-      width:280px !important;
-   height:29px;
-   position: absolute;
-   top: 270px   !important;
-   left:100px  !important;
-   font:IBM Plex Sans;
-   font-size:28px !important;
-   line-height:27.8px !important;
-   color: white;
-   }
-     
-   
-   .hide3{
+
+   .hide2 {
       display: none;
       visibility: hidden;
       height: 0px;
-     }
-     .hide2{
-       visibility: visible;
-     }
-   .hide{
-    display: block;
-    visibility: hidden;
- }
- .hide a{
-    text-decoration: none;
-    
-} 
-#hide{
+   }
+
+   #imgbtn2 {
+      visibility: hidden;
+   }
+
+   #three {
+      display: none !important;
+      visibility: hidden;
+   }
+
+   #circle {
+      display: none;
+      visibility: hidden;
+   }
+
+}
+
+@media (max-width:769px) {
+   #backword {
+      position: absolute;
+      width: 280px !important;
+      height: 29px;
+      position: absolute;
+      top: 270px !important;
+      left: 100px !important;
+      font: IBM Plex Sans;
+      font-size: 28px !important;
+      line-height: 27.8px !important;
+      color: white;
+   }
+
+
+   .hide3 {
+      display: none;
+      visibility: hidden;
+      height: 0px;
+   }
+
+   .hide2 {
+      visibility: visible;
+   }
+
+   .hide {
+      display: block;
+      visibility: hidden;
+   }
+
+   .hide a {
+      text-decoration: none;
+
+   }
+
+   #hide {
       display: block;
 
-   visibility: hidden;
+      visibility: hidden;
+   }
 }
-}
- /* @media (max-width:380px) {
+
+/* @media (max-width:380px) {
     body{
        display:flex;
        justify-content: center;
@@ -67,45 +80,52 @@
      
 }  */
 @media (max-width:550px) {
-   #backword{
+   #backword {
       position: absolute;
-      width:100px !important;
-   height:19px !important;
-   position: absolute !important;
-   top: 280px   !important;
-   left:70px  !important;
-   font:IBM Plex Sans;
-   font-size:18px !important;
-   line-height:20.8px !important;
-   color: white;
+      width: 100px !important;
+      height: 19px !important;
+      position: absolute !important;
+      top: 280px !important;
+      left: 70px !important;
+      font: IBM Plex Sans;
+      font-size: 18px !important;
+      line-height: 20.8px !important;
+      color: white;
    }
-   nav{
+
+   nav {
       height: 16px !important;
-     }
-   body{
- font-size: 6px;
    }
-   #post1{
+
+   body {
+      font-size: 6px;
+   }
+
+   #post1 {
       font-size: 20px;
    }
-  #fullimg{
-   position: relative;
-  }   
-    
-} 
-nav{
+
+   #fullimg {
+      position: relative;
+   }
+
+}
+
+nav {
    top: 0px;
    position: fixed;
    background-color: white;
 }
- 
+
 @media (min-width: 598.98px) {
-   nav{
+   nav {
       height: 66px !important;
-     } 
-#three{
-       visibility: hidden;
    }
+
+   #three {
+      visibility: hidden;
+   }
+
    /* #modeladd{
       visibility: hidden;
 
@@ -123,229 +143,276 @@ nav{
       visibility: hidden;
      }  */
 }
-@media (max-width: 450.98px) { 
-   header{
-justify-content: center;}
-   main
-       {
-justify-content: center;
-       }       
-   
+
+@media (max-width: 450.98px) {
+   header {
+      justify-content: center;
+   }
+
+   main {
+      justify-content: center;
+   }
+
 }
 
-@media (max-width: 598.98px) { 
-   #mainimg{
-      height:300px !important;
- }  
-    #imgbtn1{
-top: 30px !important;  
- } 
- #imgbtn2{
-   top: 30px !important;  
-    } 
-nav {
+@media (max-width: 598.98px) {
+   #mainimg {
+      height: 300px !important;
+   }
+
+   #imgbtn1 {
+      top: 30px !important;
+   }
+
+   #imgbtn2 {
+      top: 30px !important;
+   }
+
+   nav {
       display: block;
-visibility: hidden;       
-  }
-  
-  
+      visibility: hidden;
+   }
+
+
 }
 
 
-a{
-  text-decoration: none;
+a {
+   text-decoration: none;
 }
-#backword{
+
+#backword {
    position: absolute;
-   width:378px;
-height:47px;
-position: absolute;
-top: 358px   !important;
-left:200px  !important;
-font:IBM Plex Sans;
-font-size:36px;
-line-height:46.8px;
-color: white;
- }
+   width: 378px;
+   height: 47px;
+   position: absolute;
+   top: 358px !important;
+   left: 200px !important;
+   font: IBM Plex Sans;
+   font-size: 36px;
+   line-height: 46.8px;
+   color: white;
+}
 
- #imgtxt{
+#imgtxt {
    position: absolute;
 
-    width:327px;
-height:23px;
-top:409px !important;
-left:200px !important;
+   width: 327px;
+   height: 23px;
+   top: 409px !important;
+   left: 200px !important;
 
-font:IBM Plex Sans;
-font-size: 18px;
-line-height:23.4px;
-color: white;
+   font: IBM Plex Sans;
+   font-size: 18px;
+   line-height: 23.4px;
+   color: white;
 
- }
- #imgbutton{
+}
+
+#imgbutton {
    align-items: center;
    justify-content: space-between;
- }
- #imgbutton a{
+}
+
+#imgbutton a {
    color: #cac8c8;
- }
- #dropdown1{
+}
+
+#dropdown1 {
    background-color: rgb(245, 240, 240);
    margin-right: 4px;
- }
- #btn1{
-   background-color:  #007bff;
+}
+
+#btn1 {
+   background-color: #007bff;
    color: white;
-border: .3px solid black; padding: 6px;
-border-radius: 5px;
- }
- #btn1 span{ align-items: center;
+   border: .3px solid black;
+   padding: 6px;
+   border-radius: 5px;
+}
+
+#btn1 span {
+   align-items: center;
    justify-content: space-between;
 }
-   #img1tex{
-      font:IBM Plex Sans;
-font-size: 22px;
- line-height: 29.52px;  
+
+#img1tex {
+   font: IBM Plex Sans;
+   font-size: 22px;
+   line-height: 29.52px;
+
+}
+
+#img1tex p {
+   font: IBM Plex Sans;
+   font-size: 22px;
+   line-height: 29.52px;
+
+}
+
+@media (max-width:999px) {
+   #img1tex p {
+      font: IBM Plex Sans;
+      font-size: 16px;
+      line-height: 20.52px;
 
    }
- #img1tex p{
-      font:IBM Plex Sans;
-      font-size: 22px;
-       line-height: 29.52px;  
-      
-   }
-   @media (max-width:999px) {
-      #img1tex p{
-         font:IBM Plex Sans;
-         font-size: 16px;
-          line-height: 20.52px;  
-         
-      }
-      #img1tex{
-         font:IBM Plex Sans;
-   font-size: 16px;
-    line-height: 20.52px;  
-   
-      }
-      
+
+   #img1tex {
+      font: IBM Plex Sans;
+      font-size: 16px;
+      line-height: 20.52px;
 
    }
-  
-   #txt11{
-      font:IBM Plex Sans;
-      font-size: 19px;
-       line-height: 25.52px;  
 
-   }
-   .imgtag{
-      justify-content: 
+
+}
+
+#txt11 {
+   font: IBM Plex Sans;
+   font-size: 19px;
+   line-height: 25.52px;
+
+}
+
+.imgtag {
+   justify-content:
       space-between;
-      align-items: center;
-      margin-top: 13px;
-   }
-   .imgtag2{
-      justify-content: 
+   align-items: center;
+   margin-top: 13px;
+}
+
+.imgtag2 {
+   justify-content:
       space-between;
-      padding-left: 30px;
-      align-items: center;
-      width: 240px;
-     }
-    
-   .profile1{
-      margin-right: 30px;
-   }
-.chatbox{
+   padding-left: 30px;
+   align-items: center;
+   width: 240px;
+}
+
+.profile1 {
+   margin-right: 30px;
+}
+
+.chatbox {
    background-color: #fff;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   margin: 20px 0px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   margin: 20px 0px;
    padding: 0 2px;
 }
-.mar1{
+
+.mar1 {
    margin-right: 5px;
 }
-.view{
-   font:IBM Plex Sans;
+
+.view {
+   font: IBM Plex Sans;
 
 }
-#lasttxt{
-   font:IBM Plex Sans;
-size:15px;
-line-height: 19.5px;
+
+#lasttxt {
+   font: IBM Plex Sans;
+   size: 15px;
+   line-height: 19.5px;
 }
-#redirect{
+
+#redirect {
    margin-top: 15px;
 }
-#createtxt{
-   font:IBM Plex Sans;
-font-size:14px ;  
-padding-left: 5px;
-line-height:16px ;  
+
+#createtxt {
+   font: IBM Plex Sans;
+   font-size: 14px;
+   padding-left: 5px;
+   line-height: 16px;
 
 
 }
+
 /* #iddModal{
 width: auto;
 } */
- 
-#createtxt2{
-   font:IBM Plex Sans;
-font-size: 11px;
 
-line-height: 16px;
-letter-spacing:-0.8%;
-align-items:right ;
+#createtxt2 {
+   font: IBM Plex Sans;
+   font-size: 11px;
+
+   line-height: 16px;
+   letter-spacing: -0.8%;
+   align-items: right;
 
 }
-.txt1{
+
+.txt1 {
    font-size: 10px;
    text-decoration: none;
-color: black;
+   color: black;
 }
-.txt4{
+
+.txt4 {
    font-size: 11px;
    text-decoration: none;
 
 }
-.txt3{
+
+.txt3 {
    font-size: 13px;
    text-decoration: none;
 
 }
-#idModalLabel{
+
+#idModalLabel {
    font-size: 9px;
    background-color: #EFFFF4;
    padding: 10px 0;
 }
-#dModalLabel{
+
+#dModalLabel {
    font-size: 9px;
    background-color: #EFFFF4;
    padding: 10px 0;
 }
-#imgbtn1{
-      color: white;
+
+#imgbtn1 {
+   color: white;
 
    position: absolute;
    top: 90px;
    right: 40px;
 }
-#imgbtn2{  
-    /* color: rgb(5, 4, 4); */
+
+#imgbtn2 {
+   /* color: rgb(5, 4, 4); */
 
    position: absolute;
    top: 90px;
    left: 30px;
 }
-#mainimg{
+
+#mainimg {
    width: 100%;
-    height:500px;
+   height: 500px;
 }
-html.body{
+
+html.body {
    width: 100%;
    height: 100%;
    margin: 0px;
    padding: 0px;
    overflow-y: hidden;
 }
-#group_name{
+
+#group_name {
    margin-top: 30px;
    margin-left: 27px;
+}
+
+#left-arrow {
+   width: 0;
+   height: 0;
+   border-top: 20px solid transparent;
+   border-bottom: 20px solid transparent;
+   border-right: 30px solid #ffffff;
+   /* Set the background color to white */
+
 }
