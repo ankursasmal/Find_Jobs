@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300;1,400&display=swap');
-
+body{
+   min-width: 100vw;
+}
+ 
 @media (min-width:769px) {
    #imgbtn1 {
       display: none;
@@ -10,6 +13,7 @@
       display: none;
       visibility: hidden;
       height: 0px;
+      width:100%;
    }
 
    #imgbtn2 {
@@ -46,7 +50,9 @@
    .hide3 {
       display: none;
       visibility: hidden;
+      margin-top: 8px;
       height: 0px;
+      width: 100%;
    }
 
    .hide2 {
@@ -80,21 +86,36 @@
      
 }  */
 @media (max-width:550px) {
+   
    #backword {
       position: absolute;
-      width: 100px !important;
-      height: 19px !important;
-      position: absolute !important;
-      top: 280px !important;
+      width: 188 !important;
+      height: 47px;
+      position: absolute;
+      top: 212px !important;
       left: 70px !important;
       font: IBM Plex Sans;
-      font-size: 18px !important;
-      line-height: 20.8px !important;
+      font-size: 30px;
+      line-height: 46.8px;
       color: white;
    }
-
+   #imgtxt {
+      position: absolute;
+   
+      width: 242px !important;
+      height: 17px;
+      top: 240px !important;
+      left: 70px !important;
+   
+      font: IBM Plex Sans;
+      font-size: 13px !important;
+      line-height: 23.4px;
+      color: white;
+   
+   }
    nav {
       height: 16px !important;
+      width: 100%;
    }
 
    body {
@@ -118,6 +139,32 @@ nav {
 }
 
 @media (min-width: 598.98px) {
+   #backword {
+      position: absolute;
+      width: 188 !important;
+      height: 47px;
+      position: absolute;
+      top: 380px !important;
+      left: 200px !important;
+      font: IBM Plex Sans;
+      font-size: 35px;
+      line-height: 46.8px;
+      color: white;
+   }
+   #imgtxt {
+      position: absolute;
+   
+      width: 384px !important;
+      height: 17px;
+      top: 426px !important;
+      left: 200px !important;
+   
+      font: IBM Plex Sans;
+      font-size: 22px;
+      line-height: 23.4px;
+      color: white;
+   
+   }
    nav {
       height: 66px !important;
    }
@@ -144,7 +191,10 @@ nav {
      }  */
 }
 
-@media (max-width: 450.98px) {
+@media (max-width: 460.98px) {
+   .container-fluid{
+      width:120%;
+   }
    header {
       justify-content: center;
    }
@@ -155,7 +205,12 @@ nav {
 
 }
 
-@media (max-width: 598.98px) {
+@media (max-width: 370.98px) {
+   .container-fluid{
+      width:150%;
+   }
+}
+@media (max-width: 630.98px) {
    #mainimg {
       height: 300px !important;
    }
@@ -181,9 +236,9 @@ a {
    text-decoration: none;
 }
 
-#backword {
+/* #backword {
    position: absolute;
-   width: 378px;
+   width: 200 !important;
    height: 47px;
    position: absolute;
    top: 358px !important;
@@ -192,23 +247,9 @@ a {
    font-size: 36px;
    line-height: 46.8px;
    color: white;
-}
+} */
 
-#imgtxt {
-   position: absolute;
-
-   width: 327px;
-   height: 23px;
-   top: 409px !important;
-   left: 200px !important;
-
-   font: IBM Plex Sans;
-   font-size: 18px;
-   line-height: 23.4px;
-   color: white;
-
-}
-
+ 
 #imgbutton {
    align-items: center;
    justify-content: space-between;
@@ -416,4 +457,9 @@ html.body {
    /* Set the background color to white */
 
 }
+/* #circle{
+   position: fixed;
+   right: 47px;
+    bottom: 73px;} */
+
 /* .cointer */
