@@ -324,11 +324,10 @@ a {
 }
 
 .imgtag2 {
-   justify-content:
-      space-between;
-   padding-left: 30px;
+   margin-right: 21px;
+    padding-left: 30px;
    align-items: center;
-   width: 240px;
+   width: 286px;
 }
 
 .profile1 {

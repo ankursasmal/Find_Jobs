@@ -44,20 +44,55 @@ let cpass = document.getElementById('pass');
     }
   ]
 
+//   button view amadabad click korla job description render
  let button1 = document.getElementById('button1');
  let sub = document.getElementById('sub');
  let result = document.getElementById('result');
 
- button1.addEventListener('click',()=>{
-   job.forEach(e => {
-    let sub = document.getElementById('sub');
+//  view increment in scroll event
+var k=1000;
+let initeal_view3=3.2*k;
+let initeal_view4=2.4*k;
+ let art = document.getElementById('art');
+    let Education = document.getElementById('Education');
+art.addEventListener('mouseover',()=>{
+    let view3 = document.querySelector('.view3');
 
-      sub.innerHTML=  ` <a>description: ${e.description}</a>
-    <a >parent_uuid:${e.parent_uuid}</a>
-    <a>title:${e.title} </a>`
-                                             
-result.insertAdjacentElement('afterend',sub.outerHTML);
-   })
+          initeal_view3+=1;
+     console.log(initeal_view3)
+    view3.innerHTML=`<a>${initeal_view3} view </a>`;
+
+});
+Education.addEventListener('mouseover',()=>{
+    let view4 = document.querySelector('.view4');
+  
+    initeal_view4+=1;
+
+view4.innerHTML=`<a>${initeal_view4} view </a>`;
+
+});
+
+// view initial value of amdabad
+ let initeal_view=1.4*k;
+
+ button1.addEventListener('click',()=>{
+     // change on  of view  increase in amdabad location
+let view = document.querySelector('.view1');
+initeal_view+=1;
+console.log(initeal_view);
+view.innerHTML=`<a>${initeal_view} views</a>`;
+
+// click a job dhaka jaba
+   
+    // let sub = document.getElementById('sub');
+
+    //   sub.innerHTML=  `${ job.map(e => {
+    //   return (  <div>
+    //    <a>description: ${e.description}</a>
+    // <a >parent_uuid:${e.parent_uuid}</a>
+    // <a>title:${e.title} </a>
+    //   </div>   )                                    
+    // })} `
 
  })
 //  button1.addEventListener('dblclick',()=>{
@@ -73,8 +108,11 @@ result.insertAdjacentElement('afterend',sub.outerHTML);
     { type: 'Image Share', name: 'Instagram', example: 'Check out this beautiful photo!' },
     { type: 'Image Share', name: 'Snapchat', example: 'Sending you a fun snap!' }
 ];
-
+ 
+// whatapp a click korla ption rnder hoba
 share.addEventListener('click',()=>{
+    
+
     let empty = document.getElementById('empty');
 medium.map((e)=>{
     empty.innerHTML=`<div style="display: flex;align-items: center;justify-content: space-around;font-size: medium;">
@@ -83,6 +121,16 @@ medium.map((e)=>{
 })
 })
 
+ 
+let searchbar = document.getElementById('searchbar');
+// a casa enter by default event enter kola enventhandelar stop hoa jaba
+searchbar.addEventListener('change',(e)=>{
+    e.preventDefault();
+ let jobs=document.getElementById('jobs');
+ jobs.innerHTML=`<a>${e.target.value},India</a>`;
+})
+ 
+// red circle on click scarch bar focas hoba
  circle.addEventListener('click',()=>{
     let searchbar = document.getElementById('searchbar');
     // searchbar exixt thak la
