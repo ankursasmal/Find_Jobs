@@ -273,27 +273,29 @@ let grops = [
 ];
  
 //  post create exiquit janno 191 ka coment kora holo
-// let r=document.getElementById('Recommended');
-// r.addEventListener('click',(e1)=>{
-// e1.preventDefault();
-//  grops.forEach(e => {
-//     console.log(e.name);
-//     let div11=document.createElement('div');
-//     div11.setAttribute('id','div12');
-//     div11.innerHTML=` <div style="display: flex;justify-content: space-between;align-items: center; margin:10px">
-//     <div style="display: flex;">
-//     <img src=${e.img} alt="">
-//     <a>${e.name}</a>
+
+let r=document.getElementById('Recommended');
+r.addEventListener('click',(e1)=>{
+e1.preventDefault();
+ grops.forEach(e => {
+    console.log(e.name);
+    let div11=document.createElement('div');
+    div11.setAttribute('id','div12');
+    div11.innerHTML=`<div id="rebutton" style="display: flex;justify-content: space-between;align-items: center; margin:10px">
+    <div style="display: flex;">
+    <img src=${e.img} alt="">
+    <a>${e.name}</a>
                    
-//     </div>
-//     <button class="rounded-pill" >${e.button}</button>
+    </div>
+    <button class="rounded-pill " >${e.button}</button>
 
-// </div>`
-// let pi=document.getElementById('pi');
-// pi.insertAdjacentHTML('afterend',div11.outerHTML);
-//  });
-// })
+</div>`
+let pi=document.getElementById('pi');
+pi.insertAdjacentHTML('afterend',div11.outerHTML);
+ });
+})
 
+ 
 
 // write a post 1 on write button
 // aka chalanor janno 190 no line thaka comment
@@ -643,6 +645,10 @@ function validateSignIn1() {
     return true;
 }
  
+let rebutton=document.getElementById('rebutton');
+rebutton.addEventListener('click',(e)=>{
+    let rebutton=document.getElementById('#rebutton');
 
-
-
+    e.preventDefault();
+    rebutton.innerText=`Followed`;
+})

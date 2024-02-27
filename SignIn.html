@@ -1,543 +1,573 @@
+
    <!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Atc global</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" href="./style.css">
-    
-    </head>
-    
-    <body>
-        <div class="container-fluid" style="align-self: center;"> 
-    
-        <header>
-    
-            <nav class="navbar navbar-expand-lg ">
-                <div class="container-fluid ">
-                    <img class="navbar-brand" src="./nav.png" height="25px" ,width="130px" />
-    
-                    <div class="d-flex rounded-pill"
-                        style="align-items: center;justify-content: space-between; border: .5px solid black;width: auto;height: 40px;">
-    
-    
-                        <!-- <form class="d-flex" role="search" style="align-items: center; justify-content: space-around;"> -->
-                        <img src="./Group 28.png" style="padding:0px 15px;">
-                        <input class=" me-2" id="in" style="border: none;outline: none;width: 225px;" type="search"
-                            placeholder="secarch for you faviorit work">
-                        <!-- </form> -->
-                    </div>
-                    
-                    <a id="dmodel" style="background-color: white" data-bs-toggle="modal" data-bs-target="#dModal">
-                        <button class="btn btn-primary">Sign In</button></a>
-                    
-                    
-                    
-                    
-            </nav>
-            <div id="three" class="d-flex margin:25px"
-                style="left: 5px ;position: relative; margin-bottom: 3px; justify-content: right ;">
-                <img src="./Group 4.png" alt="">
-            </div>
-    
-    
-          <!-- sign in -->
-   <div class="modal fade" id="dModal" tabindex="-1" aria-labelledby="dModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title " id="dModalLabel">Let's learn, share & inspire each other with our
-                    passion for computer engineering. Sign up now 🤘🏼</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="d-flex"
-                        style="flex-direction: column;align-items: center;justify-content: space-between;">
-                        <div class="row row-col-1 row-col-md-2">
-
-                            <!-- frist -->
-                            <div class="col col-md-6">
-                                <div class="d-flex" style=" flex-direction: column;">
-
-                                    <a style="padding-bottom: 5px;">Sign up</a>
-                                 <!-- onsubmit event a postrequest -->
-
-                                    <form action="./main.html" id="signInform"  onsubmit=" return onsubmit() ">
-                                        <div class="d-flex " style="flex-direction: column;padding-top: 5px;">
-
-
-                                            <input id="signemail" type="email" placeholder="Email"
-                                                minlength="11" required>
-                                            <input id="signpassword" type="password" placeholder="Password"
-                                                minlength="8" maxlength="23" required>
-                                                <!-- onclick event a validation -->
-                                            <button class="btn rounded-pill  btn-primary" type="submit"
-                                            
-                                                style="margin: 15px 0;"  onclick="return validateSignIn()">Sign
-                                                In</button>
-
-                                        </div>
-
-                                    </form>
-                                    <div class="d-flex"
-                                        style="align-items: center; justify-content: center;padding:10px 2px; border: .55px solid black;">
-                                        <i class="fa-brands  fa-facebook"></i>
-                                        <a id="createtxt">Sign up with Facebook</a>
-                                    </div>
-                                    <div class="d-flex"
-                                        style="align-items: center; justify-content: center;padding: 10px 2px; border: .55px solid black; margin: 8px 0;">
-                                        <i class="fa-brands   fa-google"></i>
-                                        <a id="createtxt">Sign up with Google</a>
-                                    </div>
-                                    <a style="margin: 0 37px;">Forgot password</a>
-
-
-
-
-                                </div>
-                            </div>
-
-
-
-                            <!-- second -->
-                            <div class="col col-md-6">
-
-                                <div class="container mb-10">
-                                    <div class="d-flex"
-                                        style="flex-direction: column;align-items: center;justify-content: space-between;">
-                                        <a class="txt1"> Don’t have an account yet? </a>
-                                        <a class="tst4" href="./index.html">Create new for free!</a>
-
-                                        <img src="./side.png" alt="" height="200px" width="95%">
-                                        <a id="createtxt2">By signing up, you agree to our Terms & conditions,
-                                            Privacy policy</a>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
+   <html lang="en">
+   
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Atc global</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+       <link rel="stylesheet" href="./style.css">
+   
+   </head>
+   
+   <body>
+       <div class="container-fluid" style="align-self: center;"> 
+   
+       <header>
+   
+           <nav class="navbar navbar-expand-lg ">
+               <div class="container-fluid ">
+                   <img class="navbar-brand" src="./nav.png" height="25px" ,width="130px" />
+   
+                   <div class="d-flex rounded-pill"
+                       style="align-items: center;justify-content: space-between; border: .5px solid black;width: auto;height: 40px;">
+   
+   
+                       <!-- <form class="d-flex" role="search" style="align-items: center; justify-content: space-around;"> -->
+                       <img src="./Group 28.png" style="padding:0px 15px;">
+                       <input class=" me-2" id="in" style="border: none;outline: none;width: 225px;" type="search"
+                           placeholder="secarch for you faviorit work">
+                       <!-- </form> -->
+                   </div>
+                   <a id="dmodel" style="background-color: white" data-bs-toggle="modal" data-bs-target="#dModal">
+                    <button class="btn btn-primary">Sign In</button></a>
+                  
+                 
+           </nav>
+           <div id="three" class="d-flex margin:25px"
+               style="left: 5px ;position: relative; margin-bottom: 3px; justify-content: right ;">
+               <img src="./Group 4.png" alt="">
+           </div>
+   
+      <!-- sign in -->
+      <div class="modal fade" id="dModal" tabindex="-1" aria-labelledby="dModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title " id="dModalLabel">Let's learn, share & inspire each other with our
+                        passion for computer engineering. Sign up now 🤘🏼</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- sign in2 -->
-<div class="modal fade" id="ddModal" tabindex="-1" aria-labelledby="ddModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title " id="ddModalLabel">Welcome Back</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                    style="font-size: large;"></button>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-
-                    <div class="d-flex" style=" flex-direction: column;padding-top: 5px;">
-
-
-                        <form action="./main.html" id="signInform1"  onsubmit=" return onsubmit4()">
-                            <div class="d-flex "
-                                style="flex-direction: column;padding-top: 5px; margin-bottom: 10px;">
-
-
-                                <input id="signmail" type="email" placeholder="Email"
-                                    style="padding: 5px 20px; margin-bottom:  10px ;" required minlength="11">
-                                <input id="signpass" type="password" placeholder="Password"
-                                    style="padding: 5px 20px;" required minlength="8">
-                                <div class="d-flex"
-                                    style="align-items: center;justify-content: space-around;margin: 15px 0px;">
-                                    <button class="btn rounded-pill  btn-primary" type="submit"
-                                      onclick="return validateSignIn1()"  >Sign In</button>
-                                    <a href="./index.html" style="font-size: 14px;">or, Create Account
-                                    </a>
-                                </div>
-                            </div>
-
-                        </form>
+                <div class="modal-body">
+                    <div class="container">
                         <div class="d-flex"
-                            style="align-items: center; justify-content: center;padding:10px 2px; border: .55px solid black;">
-                            <i class="fa-brands fa-3x fa-facebook"></i>
-                            <a id="createtxt">Sign up with Facebook</a>
-                        </div>
-                        <div class="d-flex"
-                            style="align-items: center; justify-content: center;padding: 10px 2px; border: .55px solid black; margin: 8px 0;">
-                            <i class="fa-brands fa-3x fa-google"></i>
-                            <a id="createtxt">Sign up with Google</a>
-                        </div>
-                        <a style="margin-left:  38%;font-size: 14px;">Forgot password?</a>
-
-
-                    </div>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-        </header>
-        <!--  -->
-        <main>
-            <!-- fullwidth img like carsol -->
-            <section>
-                <div class="img-fluid" id="fullimg">
-                    <a data-bs-toggle="modal" data-bs-target="#ddModal"> <button type="button"
-                            class="btn btn-outline-primary" id="imgbtn1">Join Group</button></a>
-                            <i id="imgbtn2" class="fa-solid fa-3x fa-arrow-left" style="color: #f9f6f6;"></i>  
-                         
-                    <img src="./fullimg.jpeg" alt=""  width="160%" id='mainimg'>
+                            style="flex-direction: column;align-items: center;justify-content: space-between;">
+                            <div class="row row-col-1 row-col-md-2">
     
-                    <!-- <img src="https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=emTV0l4j8raEIhyu6fr6~dCFxBDy2JdiYTtk~iTYmhrq3LFAse3-iTxqk95zgv9tbjU5isatuKEjGZUqbIfe~zkauJjop~xtxrlUEXe66HRVZJVdv6Xmr3CiRM5gWoYNJt8LZnWbXtVaGsIqWkJiGccNr5ziVnidVTw1aeoGfQqI5UxCFlXbpR65pHhXTVFJxuthBsv-kmOCLk~ZzD0TgwcSTuQtZlG820N2~wtE4lOdoWQuWCwfXZgBEEJ4g1FU4pmb76m8ENQtRws4U4kXycd1U3fL9dn0cDRqQP2nOGoVDag1NFGIu~JtbVm02GbnoEbY7HL8bHLCtP7jDGG2Gg__" alt=""  width="100%" height="400px"> -->
-                    <a id="backword">Computer Engineering</a>
-                    <a id="imgtxt">142,765 Computer Engineers follow this</a>
-                </div>
+                                <!-- frist -->
+                                <div class="col col-md-6">
+                                    <div class="d-flex" style=" flex-direction: column;">
     
-            </section>
-            <!-- second bar for post -->
-            <section class="hide">
-                <div class="container mb-10">
-                    <div class="d-flex" style="flex-direction: column;">
+                                        <a style="padding-bottom: 5px;">Sign up</a>
+                                     <!-- onsubmit event a postrequest -->
     
-                        <div class="d-flex hide2" style="align-items: center;justify-content: space-between;">
-                            <a id="post1">Post(324)</a>
-                            <div class="dropdown">
-                                <button id="dropdown1" class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Filer All </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="d-flex  hide3" style="align-items: center;justify-content: space-between;">
+                                        <form action="./main.html" id="signInform"  onsubmit=" return onsubmit() ">
+                                            <div class="d-flex " style="flex-direction: column;padding-top: 5px;">
     
-                            <div id="imgbutton" class="d-flex">
-                                <a style="color: black;">All post(32)</a>
-                                <a class="px-2">Article</a>
-                                <a class="px-2">Events</a>
-                                <a class="px-2">Education</a>
-                                <a class="px-2">Job</a>
     
-                            </div>
-                            <div class="d-flex" style="align-items: center;justify-content: space-between;">
-                                <div class="dropdown">
-                                    <button id="dropdown1" class="btn  dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Write a post </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </div>
-                                <button id="btn1">
-                                    <a data-bs-toggle="modal" data-bs-target="#idModal"><img src="./Group 43.png" alt="">
-                                    </a> </button>
-                            </div>
+                                                <input id="signemail" type="email" placeholder="Email"
+                                                    minlength="11" required>
+                                                <input id="signpassword" type="password" placeholder="Password"
+                                                    minlength="8" maxlength="23" required>
+                                                    <!-- onclick event a validation -->
+                                                <button class="btn rounded-pill  btn-primary" type="submit"
+                                                
+                                                    style="margin: 15px 0;"  onclick="return validateSignIn()">Sign
+                                                    In</button>
     
-                        </div>
-                    </div>
-                </div>
-                <hr class="mt-10" />
-            </section>
-            <!-- row col div -->
-            <section>
-                <div class="container">
-                    <div class="row row-col-1 row-col-md-2">
-                        <!-- big part of row col -->
-                        <div class="col col-md-8">
-                            <!-- img contaiiner -->
-                            <!-- frist -->
-                            <div class="chatbox">
-                                <div class="img-fluid ">
-                                    <img src="./img1.jpeg" alt="" width="100%" height="250px">
-                                </div>
-                                <div class="container mb-10 ">
-                                    <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
-                                        <button class="btn btn-primery">
-                                            <span class="d-flex" style="align-items: center;  width: 77px;"> <img
-                                                    src="./✍️ Article.png" alt=""></span>
-    
-                                        </button>
-                                        <div class="d-flex" style="align-items: center;justify-content: space-between;">
-                                            <b id="img1tex">What if famous brands had regular fonts? Meet<p> RegulaBrands!
-                                                </p></b>
-                                            <button class="btn  " id="hide" type="button" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <i class="fa-solid fa-ellipsis"></i> </button>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <a id="txt11">I’ve worked in UX for the better part of a decade. From now on, I plan to
-                                        rei…</a>
-    
-                                    <div class="d-flex imgtag">
-                                        <div class="d-flex imgtag">
-                                            <img class="profile1" src="./ankur.jpeg" alt="" width="40px" height="40px"
-                                                style="border-radius: 50%;" />
-                                            <a>Sarthak Kamra </a>
-                                        </div>
-                                        <div class="d-flex imgtag">
-                                            <div class="d-flex profile1 imgtag">
-                                                <i class="fa-regular fa-eye"></i>
-                                                <a class="view">1.4k view</a>
                                             </div>
-                                           <img id="share"  src="./Group 2.1.png" alt="">
-    <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title=`>
-                                                                                    <div style="display: flex;align-items: center;justify-content: space-around;font-size: medium;flex-direction: column;">
-                                                                                            <p>pop</p>
-                                                                                            <p>bob</p>
-                                                                                            <p>oppp</p>
-                                                                                            </div>                                          </button>
-                                                                                                    
-                                      -->
-       </div>
+    
+                                        </form>
+                                        <div class="d-flex"
+                                            style="align-items: center; justify-content: center;padding:10px 2px; border: .55px solid black;">
+                                            <i class="fa-brands  fa-facebook"></i>
+                                            <a id="createtxt">Sign up with Facebook</a>
+                                        </div>
+                                        <div class="d-flex"
+                                            style="align-items: center; justify-content: center;padding: 10px 2px; border: .55px solid black; margin: 8px 0;">
+                                            <i class="fa-brands   fa-google"></i>
+                                            <a id="createtxt">Sign up with Google</a>
+                                        </div>
+                                        <a style="margin: 0 37px;">Forgot password</a>
+    
+    
+    
+    
                                     </div>
                                 </div>
-                            </div> 
-                            <div class="container ">
     
-                                <div id="empty"  >
+    
+    
+                                <!-- second -->
+                                <div class="col col-md-6">
+    
+                                    <div class="container mb-10">
+                                        <div class="d-flex"
+                                            style="flex-direction: column;align-items: center;justify-content: space-between;">
+                                            <a class="txt1"> Don’t have an account yet? </a>
+                                            <a class="tst4" href="./index.html">Create new for free!</a>
+    
+                                            <img src="./side.png" alt="" height="200px" width="95%">
+                                            <a id="createtxt2">By signing up, you agree to our Terms & conditions,
+                                                Privacy policy</a>
+                                        </div>
+                                    </div>
+    
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <!-- sign in2 -->
+    <div class="modal fade" id="ddModal" tabindex="-1" aria-labelledby="ddModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title " id="ddModalLabel">Welcome Back</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="font-size: large;"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+    
+                        <div class="d-flex" style=" flex-direction: column;padding-top: 5px;">
+    
+    
+                            <form action="./main.html" id="signInform1"  onsubmit=" return onsubmit4()">
+                                <div class="d-flex "
+                                    style="flex-direction: column;padding-top: 5px; margin-bottom: 10px;">
+    
+    
+                                    <input id="signmail" type="email" placeholder="Email"
+                                        style="padding: 5px 20px; margin-bottom:  10px ;" required minlength="11">
+                                    <input id="signpass" type="password" placeholder="Password"
+                                        style="padding: 5px 20px;" required minlength="8">
+                                    <div class="d-flex"
+                                        style="align-items: center;justify-content: space-around;margin: 15px 0px;">
+                                        <button class="btn rounded-pill  btn-primary" type="submit"
+                                          onclick="return validateSignIn1()"  >Sign In</button>
+                                        <a href="./index.html" style="font-size: 14px;">or, Create Account
+                                        </a>
+                                    </div>
+                                </div>
+    
+                            </form>
+                            <div class="d-flex"
+                                style="align-items: center; justify-content: center;padding:10px 2px; border: .55px solid black;">
+                                <i class="fa-brands fa-3x fa-facebook"></i>
+                                <a id="createtxt">Sign up with Facebook</a>
+                            </div>
+                            <div class="d-flex"
+                                style="align-items: center; justify-content: center;padding: 10px 2px; border: .55px solid black; margin: 8px 0;">
+                                <i class="fa-brands fa-3x fa-google"></i>
+                                <a id="createtxt">Sign up with Google</a>
+                            </div>
+                            <a style="margin-left:  38%;font-size: 14px;">Forgot password?</a>
+    
+    
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+         
+       </header>
+       <!--  -->
+       <main>
+           <!-- fullwidth img like carsol -->
+           <section>
+               <div class="img-fluid" id="fullimg">
+                    <!-- full img nicha -->
+  <a data-bs-toggle="modal" data-bs-target="#ddModal"> <button type="button"
+    class="btn btn-outline-primary" id="imgbtn1">Join Group</button></a>
+   <a href="./index.html">  <i id="imgbtn2" class="fa-solid fa-3x fa-arrow-left" style="color: #f9f6f6;"></i> </a> 
+  
+                        
+                   <img src="./fullimg.jpeg" alt=""  width="160%" id='mainimg'>
+   
+                   <!-- <img src="https://s3-alpha-sig.figma.com/img/756e/302b/7d56a759ac56bc165f65c40094aba4e8?Expires=1708300800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=emTV0l4j8raEIhyu6fr6~dCFxBDy2JdiYTtk~iTYmhrq3LFAse3-iTxqk95zgv9tbjU5isatuKEjGZUqbIfe~zkauJjop~xtxrlUEXe66HRVZJVdv6Xmr3CiRM5gWoYNJt8LZnWbXtVaGsIqWkJiGccNr5ziVnidVTw1aeoGfQqI5UxCFlXbpR65pHhXTVFJxuthBsv-kmOCLk~ZzD0TgwcSTuQtZlG820N2~wtE4lOdoWQuWCwfXZgBEEJ4g1FU4pmb76m8ENQtRws4U4kXycd1U3fL9dn0cDRqQP2nOGoVDag1NFGIu~JtbVm02GbnoEbY7HL8bHLCtP7jDGG2Gg__" alt=""  width="100%" height="400px"> -->
+                   <a id="backword">Computer Engineering</a>
+                   <a id="imgtxt">142,765 Computer Engineers follow this</a>
+               </div>
+   
+           </section>
+           <!-- second bar for post -->
+           <section class="hide">
+               <div class="container mb-10">
+                   <div class="d-flex" style="flex-direction: column;">
+   
+                       <div class="d-flex hide2" style="align-items: center;justify-content: space-between;">
+                           <a id="post1">Post(324)</a>
+                           <div class="dropdown">
+                               <button id="dropdown1" class="btn  alljobs dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                   Filter All </button>
+                               <ul class="dropdown-menu">
+                                   <li><a class="dropdown-item"    href="#">job</a></li>
+                                   <li><a class="dropdown-item" href="#">salary</a></li>
+                                   <li><a class="dropdown-item" href="#">Other</a></li>
+                               </ul>
+                           </div>
+                       </div>
+                       <div class="d-flex  hide3" style="align-items: center;justify-content: space-between;">
+   
+                           <div id="imgbutton" class="d-flex">
+                               <a style="color: black;">All post(32)</a>
+                               <a class="px-2">Article</a>
+                               <a class="px-2">Events</a>
+                               <a class="px-2">Education</a>
+                               <a class="px-2">Job</a>
+   
+                           </div>
+                           <div class="d-flex" style="align-items: center;justify-content: space-between;">
+                               <div class="dropdown">
+                                   <button id="dropdown1"  class="btn  dropdown-toggle jobss" type="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                       Write a post </button>
+                                   <ul class="dropdown-menu">
+                                       <li><a  class="dropdown-item " href="#"> Job</a></li>
+                                       <li><a class="dropdown-item " href="#">Salary</a></li>
+                                       <li><a class="dropdown-item " href="#">work hour</a></li>
+                                       <li><a class="dropdown-item " href="#">Others</a></li>
+   
+                                   </ul>
                                </div>
-                             <!-- second messsage -->
-                            <div class="chatbox">
-                                <div class="img-fluid ">
-                                    <img src="./img2.jpeg" alt="" width="100%" height="250px">
-                                </div>
-                                <div class="container mb-10">
-                                    <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
-                                        <button class="btn btn-primery">
-                                            <span class="d-flex" style="align-items: center; width: 100px;"> <img
-                                                    src="./🔬️ Education.png" alt=""></span>
+                               <!-- leavgroup -->
+
+        <button id="btn1">
+            <a data-bs-toggle="modal" data-bs-target="#dModal"><img src="./Group 43.png" alt="">
+            </a> </button>
     
-                                        </button>
-                                        <div class="d-flex" style="align-items: center;justify-content: space-between;">
-                                            <b id="img1tex">
-                                                Tax Benefits for Investment under National Pension<p> Scheme launched by
-                                                    Government</p>
-                                            </b>
-                                            <div class="dropdown">
-                                                <button class="btn  " id="hide" type="button" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    <i class="fa-solid fa-ellipsis"></i> </button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                </ul>
-                                            </div>
+                           </div>
+   
+                       </div>
+                   </div>
+               </div>
+               <hr class="mt-10" />
+           </section>
+           <!-- row col div -->
+           <section>
+               <div class="container">
+                   <div class="row row-col-1 row-col-md-2">
+                       <!-- big part of row col -->
+                       <div class="col col-md-8">
+                           <!-- img contaiiner -->
+                           <!-- frist -->
+                           <div class="chatbox" >
+                               <div class="img-fluid ">
+                                   <img src="./img1.jpeg" alt="" width="100%" height="250px" id="art">
+                               </div>
+                               <div class="container mb-10 ">
+                                   <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
+                                       <button class="btn btn-primery">
+                                           <span class="d-flex" style="align-items: center;  width: 77px;"> <img
+                                                   src="./✍️ Article.png" alt=""></span>
+   
+                                       </button>
+                                       <div class="d-flex" style="  align-items: center;justify-content: space-between;">
+                                           <b id="img1tex">What if famous brands had regular fonts? Meet<p> RegulaBrands!
+                                               </p></b>
+                                           <button class="btn  " id="hide" type="button" data-bs-toggle="dropdown"
+                                               aria-expanded="false">
+                                               <i class="fa-solid fa-ellipsis"></i> </button>
+                                           <ul class="dropdown-menu">
+                                               <li><a class="dropdown-item" href="#">Action</a></li>
+                                               <li><a class="dropdown-item" href="#">Another action</a></li>
+                                               <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                                   <a id="txt11">I’ve worked in UX for the better part of a decade. From now on, I plan to
+                                       rei…</a>
+   
+                                   <div class="d-flex imgtag">
+                                       <div class="d-flex imgtag">
+                                           <img class="profile1" src="./ankur.jpeg" alt="" width="40px" height="40px"
+                                               style="border-radius: 50%;" />
+                                           <a>Sarthak Kamra </a>
+                                       </div>
+                                       <div class="d-flex imgtag">
+                                           <div class="d-flex profile1 imgtag">
+                                               <i class="fa-regular fa-eye"></i>
+                                               <a class="view3">3.2k view</a>
+                                           </div>
+                                          <img  id="share"  src="./Group 2.1.png" alt=""> 
+    
+      </div>
+                                   </div>
+                               </div>
+                             <div class="container " style="display: flex;align-items: center;   justify-content: space-between; flex-wrap: wrap;">
+                             <p id="empty"></p>
                                         </div>
-                                        <a id="txt11">I’ve worked in UX for the better part of a decade. From now on, I plan
-                                            to rei…</a>
-    
-                                        <div class="d-flex imgtag">
-                                            <div class="d-flex imgtag">
-                                                <img class="profile1" src="./ankur.jpeg" alt="" width="40px" height="40px"
-                                                    style="border-radius: 50%;" />
-                                                <a>Sarah West </a>
-                                            </div>
-                                            <div class="d-flex" style="justify-content: space-between;align-items: center;">
-                                                <div class="d-flex imgtag profile1">
-                                                    <i class="fa-regular fa-eye"></i>
-                                                    <a class="view">1.4k view</a>
-                                                </div>
-    
-                                                <img src="./Group 2.1.png" alt="">
-                                            </div>
-    
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- third message -->
-                            <div class="chatbox">
-    
-                                <div class="img-fluid">
-                                    <img src="./img3.jpeg" alt="" width="100%" height="250px">
-                                </div>
-                                <div class="container mb-10">
-                                    <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
-                                        <button class="btn btn-primery">
-                                            <span class="d-flex" style="align-items: center;  width: 95px;"> <img
-                                                    src="./🗓️ Meetup.png" alt=""></span>
-    
-                                        </button>
-    
-                                        <div class="d-flex"
-                                            style="padding: 15px 0px; justify-content: space-around;flex-direction: column;">
-    
-                                            <div class="d-flex" style="align-items: center;justify-content: space-between;">
-                                                <b id="img1tex">Finance & Investment Elite Social Mixer @Lujiazui</b>
-                                                <button class="btn  " type="button" id="hide" data-bs-toggle="dropdown"
-                                                    aria-expanded="false">
-                                                    <i class="fa-solid fa-ellipsis"></i> </button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- <a>I’ve worked in UX for the better part of a decade. From now on, I plan to rei…</a> -->
-                                        <div class="d-flex"
-                                            style="justify-content: space-between;align-items: center; padding-bottom: 15px;">
-                                            <input type="datetime-local">
-                                            <div class="d-flex" style=" align-items: center; padding-bottom: 5px;">
-    
-                                                <i class="fa-solid fa-location-pin"></i>
-                                                <a id="jobs">Ahmedabad, India</a>
-                                            </div>
-                                            <P></P>
-    
-    
-                                        </div>
-                                        <div class="d-flex"  
-                                            style="justify-content: center; align-items: center; padding-bottom: 7px;flex-direction: column;">
-                                            <button class="btn btn-outline-primary"
-                                                style="width: 100%; border-radius: 6px;" id="button1" value="view" >view</button>
-                                                <div id="result" style="display: flex; justify-content: space-between;align-items: center;">
-                                                     <div id="sub" style="display: flex; justify-content: space-between;align-items: center;flex-direction: column;">
+                                       </div> 
+                         
+                            <!-- second messsage -->
+                           <div class="chatbox" id="chat1">
+                               <div class="img-fluid ">
+                                   <img src="./img2.jpeg" alt="" width="100%" height="250px" id="Education">
+                               </div>
+                               <div class="container mb-10">
+                                   <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
+                                       <button class="btn btn-primery">
+                                           <span class="d-flex" style="align-items: center; width: 100px;"> <img
+                                                   src="./🔬️ Education.png" alt=""></span>
+   
+                                       </button>
+                                       <div class="d-flex" style="align-items: center;justify-content: space-between;">
+                                           <b id="img1tex">
+                                               Tax Benefits for Investment under National Pension<p> Scheme launched by
+                                                   Government</p>
+                                           </b>
+                                           <div class="dropdown">
+                                               <button class="btn  " id="hide" type="button" data-bs-toggle="dropdown"
+                                                   aria-expanded="false">
+                                                   <i class="fa-solid fa-ellipsis"></i> </button>
+                                               <ul class="dropdown-menu">
+                                                   <li><a class="dropdown-item" href="#">Action</a></li>
+                                                   <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                   <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                       <a id="txt11">I’ve worked in UX for the better part of a decade. From now on, I plan
+                                           to rei…</a>
+   
+                                       <div class="d-flex imgtag">
+                                           <div class="d-flex imgtag">
+                                               <img class="profile1" src="./ankur.jpeg" alt="" width="40px" height="40px"
+                                                   style="border-radius: 50%;" />
+                                               <a>Sarah West </a>
+                                           </div>
+                                           <div class="d-flex" style="justify-content: space-between;align-items: center;">
+                                               <div class="d-flex imgtag profile1">
+                                                   <i class="fa-regular fa-eye"></i>
+                                                   <a class="view4">2.4k view</a>
+                                               </div>
+   
+                                               <img  id="share2"  src="./Group 2.1.png" alt="">                                         </div>
+   
+                                       </div>
+                                   </div>
+                                   <div class="container " style="display: flex;align-items: center;   justify-content: space-between; flex-wrap: wrap;">
+                                       <p id="empty1"></p>
+                               </div>
+                           </div>
+                           </div>
+                           <!-- third message -->
+                           <div class="chatbox">
+   
+                               <div class="img-fluid">
+                                   <img src="./img3.jpeg" alt="" width="100%" height="250px">
+                               </div>
+                               <div class="container mb-10">
+                                   <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
+                                       <button class="btn btn-primery">
+                                           <span class="d-flex" style="align-items: center;  width: 95px;"> <img
+                                                   src="./🗓️ Meetup.png" alt=""></span>
+   
+                                       </button>
+   
+                                       <div class="d-flex"
+                                           style="padding: 15px 0px; justify-content: space-around;flex-direction: column;">
+   
+                                           <div class="d-flex" style="align-items: center;justify-content: space-between;">
+                                               <b id="img1tex">Finance & Investment Elite Social Mixer @Lujiazui</b>
+                                               <button class="btn  " type="button" id="hide" data-bs-toggle="dropdown"
+                                                   aria-expanded="false">
+                                                   <i class="fa-solid fa-ellipsis"></i> </button>
+                                               <ul class="dropdown-menu">
+                                                   <li><a class="dropdown-item" href="#">Action</a></li>
+                                                   <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                   <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                       <!-- <a>I’ve worked in UX for the better part of a decade. From now on, I plan to rei…</a> -->
+                                       <div class="d-flex"
+                                           style="justify-content: space-between;align-items: center; padding-bottom: 15px;">
+                                           <input type="datetime-local">
+                                           <div class="d-flex" style=" align-items: center; padding-bottom: 5px;">
+   
+                                               <i class="fa-solid fa-location-pin"></i>
+                                               <a id="jobs">Ahmedabad, India</a>
+                                           </div>
+                                           <P></P>
+   
+   
+                                       </div>
+                                       <div class="d-flex"  
+                                           style="justify-content: center; align-items: center; padding-bottom: 7px;flex-direction: column;">
+                                           <button class="btn btn-outline-primary"
+                                               style="width: 100%; border-radius: 6px;" id="button1" value="view" >view</button>
+                                               <div id="result" style="display: flex; justify-content: space-around;align-items: center;padding: 10px;margin: 10px 0pxs; flex-wrap: wrap;" > 
+    <div id="some">
+   
     </div>
-                                                </div>
-                                        </div>
-    
-                                        <div class="d-flex imgtag">
-                                            <div class="d-flex imgtag">
-                                                <img class="profile1" src="./ankur.jpeg" alt="" width="40px" height="40px"
-                                                    style="border-radius: 50%;" />
-                                                <a>Sarthak Kamra </a>
-                                            </div>
-                                            <div class="d-flex" style="justify-content: space-between;align-items: center;">
-                                                <div class="d-flex imgtag profile1"
-                                                    style="justify-content: space-around;align-items: center; ">
-                                                    <i class="fa-regular fa-eye"></i>
-                                                    <a class="view">1.4k view</a>
-                                                </div>
-                                                <img src="./Group 2.1.png" alt="">
-                                            </div>
-    
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- fifth -->
-                            <div class="chatbox">
-                                <div class="container mb-10">
-                                    <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
-                                        <button class="btn btn-primery">
-                                            <span class="d-flex" style="align-items: center; width: 65px;"> <img
-                                                    src="./💼️ Job.png" alt=""></span>
-    
-                                        </button>
-                                        <div class="d-flex" style="align-items: center;justify-content: space-between;">
-                                            <b id="img1tex">Software Devolapment</b>
-                                            <button class="btn  " type="button" id="hide" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <i class="fa-solid fa-ellipsis"></i> </button>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex"
-                                        style="justify-content: space-between;align-items: center; padding-bottom: 5px;">
-                                        <a id="lasttxt">Innovaccer Analytics Private Ltd.</a>
-                                        <div class="d-flex" style="align-items: center; ">
-                                            <i class="fa-solid fa-location-pin"></i>
-                                            <a>Noida, India</a>
-                                        </div>
-                                        <p></p>
-                                    </div>
-                                    <div class="d-flex"
-                                        style="justify-content: center; align-items: center; padding-bottom: 7px;padding-top: 10px;">
-                                        <button class="btn btn-outline-primary"
-                                            style="width: 100%; border-radius: 6px;">view</button>
-                                    </div>
-                                    <div class="d-flex imgtag"
-                                        style="justify-content: space-between;align-items: center;padding-bottom: 5px;">
-                                        <div class="d-flex imgtag"
-                                            style="justify-content: space-between;align-items: center;">
-                                            <img class="profile1" src="./ankur.jpeg" alt="" width="40px" height="40px"
-                                                style="border-radius: 50%;" />
-                                            <a>Sarthak Kamra </a>
-                                        </div>
-                                        <div class="d-flex " style="justify-content: space-between;align-items: center;">
-                                            <div class="d-flex profile1 imgtag">
-                                                <i class="fa-regular fa-eye"></i>
-                                                <a class="view">1.4k view</a>
-                                            </div>
-                                            <img src="./Group 2.1.png" alt="">
-                                        </div>
-    
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <!-- small part -->
-                        <div class="col col-md-4">
-                            <div class="container">
-                                <div class="d-flex chatbox"
-                                    style="align-items: center;justify-content: space-between;margin-top: 40px;">
-                                    <div class="imgtag2">
-                                        <img src="./outline-location_on-24px 2.png" alt="">
-                                        <input id="searchbar" type="search" placeholder="search loaction"
-                                            style="outline: none;border: none; font-size: 12px; " onchange="add">
-                                    </div>
-                                    <hr />
-                                    <img src="./baseline-edit-24px.png" alt="">
-                                </div>
-    
-                            </div>
-                            <div class="container my-50">
-                                <img src="./Group 42.png" alt="" style="padding-left: 20px;">
-                            </div>
-    
-                        </div>
-                    </div>
-                </div>
-    
-    
-            </section>
-        </main>
-        <section  >
-            <div id="circle" style="position: fixed;right: 47px; bottom: 73px">
-                <div style="width: 60px;height: 60px;background-color: rgb(234, 88, 88);border-radius: 50%; border: 1px solid ;">
-                    <img style="position: absolute;top: 37%;left:32%" src="./baseline-edit-24px.png" alt="">
-                </div>
-            </div>
-        </section>
-        <footer>
-    
-        </footer>
-        <script src="a.js">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
+                                               
+                                       </div>
+                                   </div >
+   
+                                       <div class="d-flex imgtag">
+                                           <div class="d-flex imgtag">
+                                               <img class="profile1" src="./ankur.jpeg" alt="" width="40px" height="40px"
+                                                   style="border-radius: 50%;" />
+                                               <a>Sarthak Kamra </a>
+                                           </div>
+                                           <div class="d-flex" style="justify-content: space-between;align-items: center;">
+                                               <div class="d-flex imgtag profile1"
+                                                   style="justify-content: space-around;align-items: center; ">
+                                                   <i class="fa-regular fa-eye"></i>
+                                                   <a class="view1">1.4k view</a>
+                                               </div>
+                                               <img  id="share3"  src="./Group 2.1.png" alt="">                   
+                                                                 </div>
+   
+                                       </div>
+                                   </div>
+                                   <div class="container " style="display: flex;align-items: center;   justify-content: space-between; flex-wrap: wrap;">
+                                       <p id="empty2"></p>
+                               </div>
+                           </div>
+                           </div>
+                           <!-- fifth -->
+                           <div class="chatbox">
+                               <div class="container mb-10">
+                                   <div class="d-flex" style="justify-content: space-around;flex-direction: column;">
+                                       <button class="btn btn-primery">
+                                           <span class="d-flex" style="align-items: center; width: 65px;"> <img
+                                                   src="./💼️ Job.png" alt=""></span>
+   
+                                       </button>
+                                       <div class="d-flex" style="align-items: center;justify-content: space-between;">
+                                           <b id="img1tex">Software Devolapment</b>
+                                           <button class="btn  " type="button" id="hide" data-bs-toggle="dropdown"
+                                               aria-expanded="false">
+                                               <i class="fa-solid fa-ellipsis"></i> </button>
+                                           <ul class="dropdown-menu">
+                                               <li><a class="dropdown-item" href="#">Action</a></li>
+                                               <li><a class="dropdown-item" href="#">Another action</a></li>
+                                               <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                                   <div class="d-flex"
+                                       style="justify-content: space-between;align-items: center; padding-bottom: 5px;">
+                                       <a id="lasttxt">Innovaccer Analytics Private Ltd.</a>
+                                       <div class="d-flex" style="align-items: center; ">
+                                           <i class="fa-solid fa-location-pin"></i>
+                                           <a>Noida, India</a>
+                                       </div>
+                                       <p></p>
+                                   </div>
+   
+                                 
+   
+                                   <div class="d-flex"  
+                                           style="justify-content: center; align-items: center; padding-bottom: 7px;flex-direction: column;">
+                                           <button class="btn btn-outline-primary"
+                                               style="width: 100%; border-radius: 6px;" id="button2" value="view" >view</button>
+                                               <div id="result1" style="display: flex; justify-content: space-around;align-items: center;padding: 10px;margin: 10px 0pxs; flex-wrap: wrap;" > 
+    <div id="some1">
+   
     </div>
-        </body>
+                                               
+                                       </div>
+                                   </div >
+                                   
+                                   <div class="d-flex imgtag"
+                                       style="justify-content: space-between;align-items: center;padding-bottom: 5px;">
+                                       <div class="d-flex imgtag"
+                                           style="justify-content: space-between;align-items: center;">
+                                           <img class="profile1" src="./ankur.jpeg" alt="" width="40px" height="40px"
+                                               style="border-radius: 50%;" />
+                                           <a>Sarthak Kamra </a>
+                                       </div>
+                                       <div class="d-flex " style="justify-content: space-between;align-items: center;">
+                                           <div class="d-flex profile1 imgtag">
+                                               <i class="fa-regular fa-eye"></i>
+                                               <a class="view2">1.4k view</a>
+                                           </div>
+                                           <img  id="share1"  src="./Group 2.1.png" alt="">                                     </div>
+   
+                                   </div>
+                               </div>
+                               <div class="container " style="display: flex;align-items: center;   justify-content: space-between; flex-wrap: wrap;">
+                                   <p id="empty3"></p>
+                           </div>
+                       </div>
+   </div>
+                       <!-- small part -->
+                       <div class="col col-md-4">
+                                <div class="d-flex chatbox" style="align-items: center; margin-left: 20px;margin-top: 40px;">
+                                   <div class="imgtag2">
+                                       <img src="./outline-location_on-24px 2.png" alt="">
+                                       <input id="searchbar" type="search" placeholder="search loaction"
+                                           style="outline: none;border: none; font-size: 12px;width: 115px; " >
+                                   </div>
+                                    <img id="addlocation" src="./baseline-edit-24px.png" alt="">
+                               </div>
+   
+                           <div class="container my-50">
+                               <img src="./Group 42.png" alt="" style="padding-left: 20px;">
+                            </div>
+                            <div id="postdata" style="visibility: hidden;" class="container my-30">
+                               <h2 id="h22" style="display: block; margin-top: 15px;">Your query </h2>
+            <form id="postform" style="display: block; display: flex;   padding: 7px; margin: 10px;flex-direction: column;border: .02px solid black;">
+               <select name="" id="select1"  style="margin-top: 10px;" required>
+                   <option value="Job">Job</option>
+                   <option value="Salary">Salary</option>
+                   <option value="Work Hour">Work Hour</option>
+                   <option value="Other">Other</option>
+   
+   
+               </select>
+   <textarea  id="text1" type="text" placeholder="enter text" style="margin: 7px 0px;" rows="6" cols="4" required></textarea>
+               <button class="rounded-pill" type="submit" style="padding: 0 20%;margin-bottom: 10px; background-color: rgb(99, 128, 231);color:white;">post</button> 
+            </form>
+            <div id="posts">
     
-    </html>
+             </div>
+                               </div>
+   
+   
+                       </div>
+                   </div>
+               </div>
+   
+   
+           </section>
+       </main>
+       <section  >
+           <div id="circle" style="position: fixed;right: 47px; bottom: 73px">
+               <div style="width: 60px;height: 60px;background-color: rgb(234, 88, 88);border-radius: 50%; border: 1px solid ;">
+                   <img style="position: absolute;top: 37%;left:32%" src="./baseline-edit-24px.png" alt="">
+               </div>
+           </div>
+       </section>
+       <footer>
+   
+       </footer>
+       <script src="a.js">
+       </script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+           crossorigin="anonymous"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+           crossorigin="anonymous" referrerpolicy="no-referrer" />
+   </div>
+       </body>
+   
+   </html>
