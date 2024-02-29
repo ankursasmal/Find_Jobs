@@ -430,6 +430,10 @@ color: rgb(20, 67, 207);
 .sub:hover{
 border: 2px solid rgb(38, 143, 208);
 }
+ 
+.sub1:hover{
+   border: 2px solid rgb(38, 143, 208);
+   }
 #postall:hover{
    border: 2px solid rgb(38, 143, 208);
 

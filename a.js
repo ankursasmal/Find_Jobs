@@ -3,95 +3,145 @@ let password = document.getElementById('n4');
 let cpassword = document.getElementById('n5');
 let pass = document.getElementById('pass');
 let cpass = document.getElementById('pass');
- let circle = document.getElementById('circle');
-   let job=[
+let circle = document.getElementById('circle');
+let job = [
     {
-      description : "financial manager",
-      parent_uuid : "90369dd177d9dc5305079b81f1dc0702",
-      uuid: "9ffbfbe0c0f711a4b5c09cb9489dffa0",
-      title : "accounting ninja"
+        description: "financial manager",
+        parent_uuid: "90369dd177d9dc5305079b81f1dc0702",
+        uuid: "9ffbfbe0c0f711a4b5c09cb9489dffa0",
+        title: "accounting ninja"
     },
     {
-      description: "sales executive",
-      parent_uuid : "193e2cfef58673322b3e112004e22464",
-      uuid : "1a53001559d3244c7825e01f5bf47053",
-      title: "sales ninja"
+        description: "sales executive",
+        parent_uuid: "193e2cfef58673322b3e112004e22464",
+        uuid: "1a53001559d3244c7825e01f5bf47053",
+        title: "sales ninja"
     },
     {
-      description : "customer service or social media",
-      parent_uuid : "be9577e912d72645481316acfcdafa66",
-      uuid: "4fc168e1113b1f26cc2df5bba8e4d731",
-      title : "customer engagement ninja"
+        description: "customer service or social media",
+        parent_uuid: "be9577e912d72645481316acfcdafa66",
+        uuid: "4fc168e1113b1f26cc2df5bba8e4d731",
+        title: "customer engagement ninja"
     },
     {
-      description: "software engineer",
-      parent_uuid : "d202138ac2ddca18189dd7464b395a61",
-      uuid : "1254c7d8dda6756e1094a040d5724675",
-      title : "software ninjaneer"
+        description: "software engineer",
+        parent_uuid: "d202138ac2ddca18189dd7464b395a61",
+        uuid: "1254c7d8dda6756e1094a040d5724675",
+        title: "software ninjaneer"
     },
     {
-      description : "web application developer",
-      parent_uuid: "292316eb40b9c152340ae42d7b2816f7",
-      uuid : "a50d6a27ebeaa857a184fce80c6e37cc",
-      title : "php ninja"
+        description: "web application developer",
+        parent_uuid: "292316eb40b9c152340ae42d7b2816f7",
+        uuid: "a50d6a27ebeaa857a184fce80c6e37cc",
+        title: "php ninja"
     },
     {
-      description : "baker",
-      parent_uuid : "1c4217f2cc6c8afa6532f13475e17ed2",
-      uuid : "bfd0ab9037525887e167e1ed019402b5",
-      title : "cupcake ninja"
+        description: "baker",
+        parent_uuid: "1c4217f2cc6c8afa6532f13475e17ed2",
+        uuid: "bfd0ab9037525887e167e1ed019402b5",
+        title: "cupcake ninja"
     }
-  ]
+]
 
 //   button view amadabad click korla job description render
- let button1 = document.getElementById('button1');
- let sub = document.getElementById('sub');
- let result = document.getElementById('result');
- let button2 = document.getElementById('button2');
- let result1 = document.getElementById('result');
+let button1 = document.getElementById('button1');
+let sub = document.getElementById('sub');
+let result = document.getElementById('result');
+let button2 = document.getElementById('button2');
+let result1 = document.getElementById('result');
 
 //  view increment in scroll event
-var k=1000;
-let initeal_view3=3.2*k;
-let initeal_view4=2.4*k;
- let art = document.getElementById('art');
-    let Education = document.getElementById('Education');
-art.addEventListener('mouseover',()=>{
+var k = 1000;
+let initeal_view3 = 3.2 * k;
+let initeal_view4 = 2.4 * k;
+let art = document.getElementById('art');
+let Education = document.getElementById('Education');
+art.addEventListener('mouseover', () => {
     let view3 = document.querySelector('.view3');
 
-          initeal_view3+=1;
-     console.log(initeal_view3)
-    view3.innerHTML=`<a>${initeal_view3} view </a>`;
+    initeal_view3 += 1;
+    console.log(initeal_view3)
+    view3.innerHTML = `<a>${initeal_view3} view </a>`;
 
 });
-Education.addEventListener('mouseover',()=>{
+Education.addEventListener('mouseover', () => {
     let view4 = document.querySelector('.view4');
-  
-    initeal_view4+=1;
 
-view4.innerHTML=`<a>${initeal_view4} view </a>`;
+    initeal_view4 += 1;
+
+    view4.innerHTML = `<a>${initeal_view4} view </a>`;
 
 });
- 
+
 // view initial value of amdabad
- let initeal_view=1.4*k;
+let initeal_view = 1.4 * k;
 
-  
- button1.addEventListener('click',()=>{
-      // change on  of view  increase in amdabad location
-let view = document.querySelector('.view1');
-initeal_view+=1;
-console.log(initeal_view);
-view.innerHTML=`<a>${initeal_view} views</a>`;
-// click a job dhaka jaba
- 
-let detail = document.getElementById('detail');
- 
-job.forEach(e => { 
-//  loop ar under create korta hoba div na hola akta div a barbar innerhtml a change hocha
-    var d = document.createElement('div');
-    d.setAttribute('class',"sub");
-  d.innerHTML=  `
+//1.  **** get req ta value ascha display hocha
+// get req ta no header
+
+button1.addEventListener('click', (e) => {
+    e.preventDefault();
+    fetch("https://www.arbeitnow.com/api/job-board-api", {
+        method: 'GET',
+
+
+        // below lime likta pari ba na pari
+    }).then(function (res) {
+        return res;
+    }).then(res => {
+        return res.json();
+    })
+        .then(function (da) {
+            console.log(da);
+            let { data } = da;
+            // let {ja arr different obj undera sai name }=da;
+            for (let ei of data) {
+                var d = document.createElement('div');
+                d.setAttribute('class', "sub");
+                d.innerHTML = ` <div style="display: flex; justify-content: space-between;flex-direction: column;border: .5px solid rgb(145, 230, 76);padding: 5px; margin:7px ">
+             
+           <a>  <b>Company Name:</b>${ei.company_name}  </a>
+<a ><b>Title:</b>${ei.title}</a>
+<a><b>url:</b>${ei.url}</a>
+ <a><b>job_types:</b>${ei.job_types[0]}</a>
+<a><b>location:</b>${ei.location}</a>
+           </div>
+                `
+                let some = document.getElementById('some');
+                some.insertAdjacentHTML('afterend', d.outerHTML)
+
+            }
+
+        })
+})
+
+button1.addEventListener('dblclick', (e) => {
+    e.preventDefault();
+    let re = document.getElementById('result');
+    re.style.display = 'none';
+
+
+})
+
+let initeal_view6 = 1.4 * k;
+
+//2.****  normal arry ta data store kora display 
+
+button2.addEventListener('click', () => {
+    // change on  of view  increase in amdabad location
+    let view = document.querySelector('.view2');
+    initeal_view6 += 1;
+    console.log(initeal_view6);
+    view.innerHTML = `<a>${initeal_view6} views</a>`;
+    // click a job dhaka jaba
+
+    let detail = document.getElementById('detail');
+
+    job.forEach(e => {
+        //  loop ar under create korta hoba div na hola akta div a barbar innerhtml a change hocha
+        var d3 = document.createElement('div');
+        d3.setAttribute('class', "sub1");
+        d3.innerHTML = `
  <div style="display: flex; justify-content: space-between;flex-direction: column;border: .5px solid rgb(145, 230, 76);padding: 5px; margin:7px ">
 
  <a>uuid:${e.description} </a> 
@@ -99,232 +149,217 @@ job.forEach(e => {
      <a>title:${e.title}  </a>
      </div>
      `
-let some=document.getElementById('some');
-some.insertAdjacentHTML('afterend',d.outerHTML)
+        let some = document.getElementById('some1');
+        some.insertAdjacentHTML('afterend', d3.outerHTML)
 
 
-}) 
- 
-   
-  })
-
-  let initeal_view6=1.4*k;
-
-  
- button2.addEventListener('click',()=>{
-      // change on  of view  increase in amdabad location
-let view = document.querySelector('.view2');
-initeal_view6+=1;
-console.log(initeal_view6);
-view.innerHTML=`<a>${initeal_view6} views</a>`;
-// click a job dhaka jaba
- 
-let detail = document.getElementById('detail');
- 
-job.forEach(e => { 
-//  loop ar under create korta hoba div na hola akta div a barbar innerhtml a change hocha
-    var d3 = document.createElement('div');
-    d3.setAttribute('class',"sub1");
-  d3.innerHTML=  `
- <div style="display: flex; justify-content: space-between;flex-direction: column;border: .5px solid rgb(145, 230, 76);padding: 5px; margin:7px ">
-
- <a>uuid:${e.description} </a> 
-       <a>description:${e.uuid}  </a>
-     <a>title:${e.title}  </a>
-     </div>
-     `
-let some=document.getElementById('some1');
-some.insertAdjacentHTML('afterend',d3.outerHTML)
+    })
 
 
-}) 
- 
-   
-  })
-  
-//  button1.addEventListener('dblclick',()=>{
-//     let button1 = document.getElementById('button1').value;
-
-// sub.style.visibility='visible';
-//  })
+})
 
 
- let medium = [
+// whatapp a click korla option render hoba
+// 1 no share button
+let share = document.getElementById('share');
+ let sharemain = document.getElementById('sharemain');
+
+
+let medium = [
     { type: 'Massage', name: 'WhatsApp', example: 'Hey, how are you?' },
     { type: 'Massage', name: 'Facebook Messenger', example: 'Nice to meet you!' },
     { type: 'Image Share', name: 'Instagram', example: 'Check out this beautiful photo!' },
     { type: 'Image Share', name: 'Snapchat', example: 'Sending you a fun snap!' }
 ];
- 
- 
-// whatapp a click korla option render hoba
-// 1 no share button
-let share = document.getElementById('share');
 
-share.addEventListener('click',()=>{
-    
+let indecator = false;
 
- medium.forEach((e)=>{
-    let div21=document.createElement('div');
-    div21.setAttribute('id','mediamname');
+ share.addEventListener('click', () => {
+    // ***  with out arry using fatch api
+    //     fetch("https://api.messagemedia.com ", {
+    // 	method: 'GET',
 
-    div21.innerHTML=`<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
+    // }).then(res=>res.json()).then(data=>{
+    //         console.log(data);
+    //     })
+
+    if (indecator) {
+        indecator = false;
+    }
+    else {
+        indecator = true;
+    }
+    // console.log(indecator)
+    if (indecator === true) {
+for(let e of medium ){   
+
+             let div21 = document.createElement('div');
+            div21.setAttribute('id', 'mediamname');
+
+            div21.innerHTML = `<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
    
     <p >${e.name}</p>
     </div>`
-    let empty = document.getElementById('empty');
+            let empty = document.getElementById('empty');
+             empty.insertAdjacentHTML('afterend', div21.outerHTML);
+         }
+        
+    }
+      
 
-empty.insertAdjacentHTML('afterend',div21.outerHTML);
+     else {
+        sharemain.style.display = 'none';
+        // janno 1 bar click a visible 2nd ta disapear then fully disapper on click event a
+
+        // var middleempty=document.createElement('div');
+        // middleempty.setAttribute("id","middleempty");
+        // middleempty.innerHTML=`<p id="empty"></p>`;
+        // sharemain.insertAdjacentHTML('afterend',middleempty.outerHTML);
+
+ }
+  
+
 })
- 
-})
+share.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    window.history.back();
+ })
+
+
+// above ternery or below dblclick
+
+// share.addEventListener('dblclick',()=>{
+//     let   sharemain = document.getElementById('sharemain');
+//     sharemain.style.display='none';
+//  })
+
 // 2 no share button
 
 let share1 = document.getElementById('share1');
 
-share1.addEventListener('click',()=>{
-    
+share1.addEventListener('click', () => {
 
- medium.forEach((e)=>{
-    let div2=document.createElement('div');
-    div2.setAttribute('id','mediamname');
 
-    div2.innerHTML=`<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
+    medium.forEach((e) => {
+        let div2 = document.createElement('div');
+        div2.setAttribute('id', 'mediamname');
+
+        div2.innerHTML = `<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
    
     <p >${e.name}</p>
     </div>`
-    let empty = document.getElementById('empty3');
+        let empty = document.getElementById('empty3');
 
-empty.insertAdjacentHTML('afterend',div2.outerHTML);
-})
- 
+        empty.insertAdjacentHTML('afterend', div2.outerHTML);
+    })
+
 })
 // 3 no share button
 
 let share2 = document.getElementById('share2');
 
-share2.addEventListener('click',()=>{
-    
+share2.addEventListener('click', () => {
 
- medium.forEach((e)=>{
-    let div2=document.createElement('div');
-    div2.setAttribute('id','mediamname');
 
-    div2.innerHTML=`<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
+    medium.forEach((e) => {
+        let div2 = document.createElement('div');
+        div2.setAttribute('id', 'mediamname');
+
+        div2.innerHTML = `<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
    
     <p >${e.name}</p>
     </div>`
-    let empty = document.getElementById('empty1');
+        let empty = document.getElementById('empty1');
 
-empty.insertAdjacentHTML('afterend',div2.outerHTML);
-})
- 
+        empty.insertAdjacentHTML('afterend', div2.outerHTML);
+    })
+
 })
 // 4 no share button
 
 let share3 = document.getElementById('share3');
 
-share3.addEventListener('click',()=>{
-    
+share3.addEventListener('click', () => {
 
- medium.forEach((e)=>{
-    let div2=document.createElement('div');
-    div2.setAttribute('id','mediamname');
 
-    div2.innerHTML=`<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
+    medium.forEach((e) => {
+        let div2 = document.createElement('div');
+        div2.setAttribute('id', 'mediamname');
+
+        div2.innerHTML = `<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
    
     <p >${e.name}</p>
     </div>`
-    let empty = document.getElementById('empty2');
+        let empty = document.getElementById('empty2');
 
-empty.insertAdjacentHTML('afterend',div2.outerHTML);
+        empty.insertAdjacentHTML('afterend', div2.outerHTML);
+    })
+
 })
- 
-})
- 
+
 let searchbar = document.getElementById('searchbar');
 // a casa enter by default event enter kola enventhandelar stop hoa jaba
-searchbar.addEventListener('change',(e)=>{
+searchbar.addEventListener('change', (e) => {
     e.preventDefault();
- let jobs=document.getElementById('jobs');
- jobs.innerHTML=`<a>${e.target.value},India</a>`;
- searchbar.value="";
+    let jobs = document.getElementById('jobs');
+    jobs.innerHTML = `<a>${e.target.value},India</a>`;
+    searchbar.value = "";
 })
- 
+
 // red circle on click scarch bar focas hoba
- circle.addEventListener('click',()=>{
+circle.addEventListener('click', () => {
     let searchbar = document.getElementById('searchbar');
     // searchbar exixt thak la
-    if(searchbar){
+    if (searchbar) {
         // cursa will rich on this location
         searchbar.focus();
     }
 
- })
+})
 
- 
+
 
 // main.html follow groups start 
 let grops = [
-    { img:'./Rectangle 6.png', name: 'Leisure', button: 'Follow' },
-    { img:'./Rectangle 6 (1).png', name: 'Activism', button: 'follow' },
-    { img:'./Rectangle 6 (2).png' ,name: 'MBA', button: 'follow' },
-    { img:'./Rectangle 6 (3).png' ,name: 'Philosophy', button: 'Follow' },
+    { img: './Rectangle 6.png', name: 'Leisure', button: 'Follow' },
+    { img: './Rectangle 6 (1).png', name: 'Activism', button: 'follow' },
+    { img: './Rectangle 6 (2).png', name: 'MBA', button: 'follow' },
+    { img: './Rectangle 6 (3).png', name: 'Philosophy', button: 'Follow' },
 ];
- 
-//  post create exiquit janno 191 ka coment kora holo
-// let r=document.getElementById('Recommended');
-// r.addEventListener('click',(e1)=>{
-// e1.preventDefault();
-//  grops.forEach(e => {
-//     console.log(e.name);
-//     let div11=document.createElement('div');
-//     div11.setAttribute('id','div12');
-//     div11.innerHTML=` <div style="display: flex;justify-content: space-between;align-items: center; margin:10px">
-//     <div style="display: flex;">
-//     <img src=${e.img} alt="">
-//     <a>${e.name}</a>
-                   
-//     </div>
-//     <button class="rounded-pill" >${e.button}</button>
 
-// </div>`
-// let pi=document.getElementById('pi');
-// pi.insertAdjacentHTML('afterend',div11.outerHTML);
-//  });
-// })
 
 
 // write a post 1 on write button
 // aka chalanor janno 190 no line thaka comment
-let post=document.getElementById('postform');
+let post = document.getElementById('postform');
 
-post.addEventListener('submit',(e)=>{
+post.addEventListener('submit', (e) => {
     e.preventDefault();
     let select1 = document.getElementById('select1').value;
-        let text1 = document.getElementById('text1').value;
-        fetch("https://jsonplaceholder.typicode.com/posts", {
-            method: 'POST',
-            body: JSON.stringify({
-                select1: select1,
-                text1: text1,
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            }
-            // below lime likta pari ba na pari
-        }).then(function (res) {
-            return res;
-        }).then(res => {
-            return res.json()
-        })
-            .then(function (data) {
-                console.log(data.text1, data.select1);
-  // only  function under div create korla tobai cick a many div hoba na hola 1 ta ta bar bar changa hoba
-                let div1=document.createElement('div');
-                div1.setAttribute('id','postall');
- 
-        div1.innerHTML=`<div style="display: flex;flex-direction: column;padding: 5px 7px; margin: 10px 10px; flex-wrap: wrap;border-radius: 10px; border: .01px solid blue;" >
+    let text1 = document.getElementById('text1').value;
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: 'POST',
+        body: JSON.stringify({
+            select1: select1,
+            text1: text1,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        }
+        // below lime likta pari ba na pari
+    }).then(function (res) {
+        return res;
+    }).then(res => {
+        return res.json()
+    })
+        .then(function (data) {
+            console.log(data.text1, data.select1);
+            // only  function under div create korla tobai cick a many div hoba na hola 1 ta ta bar bar changa hoba
+            let div1 = document.createElement('div');
+            div1.setAttribute('id', 'postall');
+
+            div1.innerHTML = `<div style="display: flex;flex-direction: column;padding: 5px 7px; margin: 10px 10px; flex-wrap: wrap;border-radius: 10px; border: .01px solid blue;" >
        <a>subject:${select1}</a>
        <a>Inquery:${text1}</a>
        <a>Time:${new Date(8.64e15).toString()}</a>
@@ -332,58 +367,61 @@ post.addEventListener('submit',(e)=>{
 
         </div>
         `
-         let posts=document.getElementById('posts');
- 
-        posts.insertAdjacentHTML('afterend',div1.outerHTML);
-        setTimeout(()=>{
-            posts.style.display='none';
-            posts.style.visibility='hidden';
-        },2000)
+            let posts = document.getElementById('posts');
 
-             })
+            posts.insertAdjacentHTML('afterend', div1.outerHTML);
 
-    })
 
-     
-    // boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
-    let jobs=document.querySelector('.jobss');
+        })
 
-jobs.addEventListener('click',()=>{
-         let postdata=document.getElementById('postdata');
-   postdata.style.visibility='visible';
-    
 })
- // boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
- let alljobs=document.querySelector('.alljobs');
-
- alljobs.addEventListener('click',()=>{
-          let postdata=document.getElementById('postdata');
-    postdata.style.visibility='visible';
-     
- })
 
 
- 
+// boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
+let jobs = document.querySelector('.jobss');
 
-    // for hide post section
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     let dropdown1 = document.querySelector('#dropdown1');
-    //     dropdown1.addEventListener('click', function (e) {
-    //         e.preventDefault();
-    //         let post = document.getElementById('postform');
-    //         let h = document.getElementById('h22');
-    
-    //         // Toggle visibility (show/hide)
-    //         post.style.visibility = (post.style.visibility === 'hidden') ? 'visible' : 'hidden';
-    //         h.style.visibility = (h.style.visibility === 'hidden') ? 'visible' : 'hidden';
-    //     });
-    // });
+jobs.addEventListener('click', () => {
+    let postdata = document.getElementById('postdata');
+    postdata.style.visibility = 'visible';
+    let text1 = document.getElementById('text1');
+    text1.focus();
+
+})
 
 
+jobs.addEventListener('dblclick', () => {
+    let postdata = document.getElementById('postdata');
+    postdata.style.visibility = 'hidden';
+
+})
+
+
+// boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
+let alljobs = document.querySelector('.alljobs');
+
+alljobs.addEventListener('click', () => {
+    let postdata = document.getElementById('postdata');
+    postdata.style.visibility = 'visible';
+    let text1 = document.getElementById('text1');
+    text1.focus();
+
+})
+
+
+alljobs.addEventListener('dblclick', () => {
+    let postdata = document.getElementById('postdata');
+    postdata.style.visibility = 'hidden';
+
+})
 
 
 
- let onsubmit = () => {
+
+
+
+
+
+let onsubmit = () => {
     //2. event listener javatar post request kora hoccha
 
     signInform.addEventListener('submit', function (e) {
@@ -528,7 +566,7 @@ let onsubmit4 = () => {
     })
 }
 
- 
+
 
 // email validation 
 function isValidEmail(email) {
@@ -602,7 +640,7 @@ function validateForm1() {
 function validateSignIn() {
     let email = document.getElementById('signemail').value;
     let password = document.getElementById('signpassword').value;
-if ( email === '' || password === '') {
+    if (email === '' || password === '') {
         alert('All fields must be filled out');
         return false;
     }
@@ -616,15 +654,15 @@ if ( email === '' || password === '') {
         return false;
     }
 
-    
+
 
     return true;
 }
 function validateSignIn1() {
     let email = document.getElementById('signmail').value;
-        let pass = document.getElementById('signpass').value;
-       
-     if ( email === '' ||  pass === '') {
+    let pass = document.getElementById('signpass').value;
+
+    if (email === '' || pass === '') {
         alert('All fields must be filled out');
         return false;
     }
@@ -638,11 +676,11 @@ function validateSignIn1() {
         return false;
     }
 
-    
+
 
     return true;
 }
- 
+
 
 
 

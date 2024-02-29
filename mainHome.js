@@ -275,8 +275,16 @@ let grops = [
 //  post create exiquit janno 191 ka coment kora holo
 
 let r=document.getElementById('Recommended');
+let revalue=false;
 r.addEventListener('click',(e1)=>{
-e1.preventDefault();
+// e1.preventDefault();
+if(revalue==false){
+    revalue=true;
+}
+else{
+    revalue=false;
+}
+if(revalue==true){
  grops.forEach(e => {
     console.log(e.name);
     let div11=document.createElement('div');
@@ -293,8 +301,16 @@ e1.preventDefault();
 let pi=document.getElementById('pi');
 pi.insertAdjacentHTML('afterend',div11.outerHTML);
  });
+}
+
+
 })
 
+r.addEventListener('dblclick',(e1)=>{
+    // e1.preventDefault();
+let group=document.getElementById('group');
+group.style.visibility='hidden';
+})
  
 
 // write a post 1 on write button
@@ -337,49 +353,71 @@ post.addEventListener('submit',(e)=>{
          let posts=document.getElementById('posts');
  
         posts.insertAdjacentHTML('afterend',div1.outerHTML);
-        setTimeout(()=>{
-            posts.style.display='none';
-            posts.style.visibility='hidden';
-        },2000)
+        
 
              })
 
     })
-
-     
-    // boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
-    let jobs=document.querySelector('.jobss');
-
-jobs.addEventListener('click',()=>{
-         let postdata=document.getElementById('postdata');
-   postdata.style.visibility='visible';
     
-})
  // boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
- let alljobs=document.querySelector('.alljobs');
+ let jobs=document.querySelector('.jobss');
+ let values=false;
 
- alljobs.addEventListener('click',()=>{
+ jobs.addEventListener('click',(e)=>{
+    if(values==false){
+        values=true;
+    }
+    else{
+        values=false;
+
+    }
+    // e.preventDefault();
           let postdata=document.getElementById('postdata');
+          console.log(values)
+          if(values==true){
     postdata.style.visibility='visible';
+    let text1=document.getElementById('text1');
+   text1.focus();
+          }
+          else{
+            let postdata=document.getElementById('postdata');
+            postdata.style.visibility='hidden';
+          }
      
  })
-
-
  
+// dbl click a hoto if else use kora tur ,false kaj hoa jaba
 
-    // for hide post section
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     let dropdown1 = document.querySelector('#dropdown1');
-    //     dropdown1.addEventListener('click', function (e) {
-    //         e.preventDefault();
-    //         let post = document.getElementById('postform');
-    //         let h = document.getElementById('h22');
-    
-    //         // Toggle visibility (show/hide)
-    //         post.style.visibility = (post.style.visibility === 'hidden') ? 'visible' : 'hidden';
-    //         h.style.visibility = (h.style.visibility === 'hidden') ? 'visible' : 'hidden';
-    //     });
-    // });
+  // boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
+  let alljobs=document.querySelector('.alljobs');
+ let values1=false;
+  alljobs.addEventListener('click',(e)=>{
+    if(values1==false){
+        values1=true;
+    }
+    else{
+        values1=false;
+
+    }
+    if(values1==true){
+
+           let postdata=document.getElementById('postdata');
+     postdata.style.visibility='visible';
+     let text1=document.getElementById('text1');
+   text1.focus();
+    }
+    else{
+        let postdata=document.getElementById('postdata');
+        postdata.style.visibility='hidden';
+    }
+      
+  })
+ 
+  
+   
+  
+ 
+ 
 
 
 
@@ -645,10 +683,10 @@ function validateSignIn1() {
     return true;
 }
  
-let rebutton=document.getElementById('rebutton');
-rebutton.addEventListener('click',(e)=>{
-    let rebutton=document.getElementById('#rebutton');
+// let rebutton=document.getElementById('rebutton');
+// rebutton.addEventListener('click',(e)=>{
+//     let rebutton=document.getElementById('#rebutton');
 
-    e.preventDefault();
-    rebutton.innerText=`Followed`;
-})
+//     e.preventDefault();
+//     rebutton.innerText=`Followed`;
+// })
