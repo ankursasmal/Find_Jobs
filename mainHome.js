@@ -414,15 +414,6 @@ post.addEventListener('submit',(e)=>{
   })
  
   
-   
-  
- 
- 
-
-
-
-
-
  let onsubmit = () => {
     //2. event listener javatar post request kora hoccha
 

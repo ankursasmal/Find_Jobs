@@ -377,48 +377,62 @@ post.addEventListener('submit', (e) => {
 })
 
 
-// boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
-let jobs = document.querySelector('.jobss');
-
-jobs.addEventListener('click', () => {
-    let postdata = document.getElementById('postdata');
-    postdata.style.visibility = 'visible';
-    let text1 = document.getElementById('text1');
-    text1.focus();
-
-})
 
 
-jobs.addEventListener('dblclick', () => {
-    let postdata = document.getElementById('postdata');
-    postdata.style.visibility = 'hidden';
+//  boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
+ let jobs=document.querySelector('.jobss');
+ let values=false;
 
-})
+ jobs.addEventListener('click',(e)=>{
+    if(values==false){
+        values=true;
+    }
+    else{
+        values=false;
 
+    }
+    // e.preventDefault();
+          let postdata=document.getElementById('postdata');
+          console.log(values)
+          if(values==true){
+    postdata.style.visibility='visible';
+    let text1=document.getElementById('text1');
+   text1.focus();
+          }
+          else{
+            let postdata=document.getElementById('postdata');
+            postdata.style.visibility='hidden';
+          }
+     
+ })
+ 
+//  insteed of dbl click if else use
+  // boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
+  let alljobs=document.querySelector('.alljobs');
+ let values1=false;
+  alljobs.addEventListener('click',(e)=>{
+    if(values1==false){
+        values1=true;
+    }
+    else{
+        values1=false;
 
-// boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
-let alljobs = document.querySelector('.alljobs');
+    }
+    if(values1==true){
 
-alljobs.addEventListener('click', () => {
-    let postdata = document.getElementById('postdata');
-    postdata.style.visibility = 'visible';
-    let text1 = document.getElementById('text1');
-    text1.focus();
-
-})
-
-
-alljobs.addEventListener('dblclick', () => {
-    let postdata = document.getElementById('postdata');
-    postdata.style.visibility = 'hidden';
-
-})
-
-
-
-
-
-
+           let postdata=document.getElementById('postdata');
+     postdata.style.visibility='visible';
+     let text1=document.getElementById('text1');
+   text1.focus();
+    }
+    else{
+        let postdata=document.getElementById('postdata');
+        postdata.style.visibility='hidden';
+    }
+      
+  })
+ 
+  
 
 
 let onsubmit = () => {
