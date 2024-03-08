@@ -60,8 +60,7 @@ art.addEventListener('mouseover', () => {
     let view3 = document.querySelector('.view3');
 
     initeal_view3 += 1;
-    console.log(initeal_view3)
-    view3.innerHTML = `<a>${initeal_view3} view </a>`;
+     view3.innerHTML = `<a>${initeal_view3} view </a>`;
 
 });
 Education.addEventListener('mouseover', () => {
@@ -131,8 +130,7 @@ button2.addEventListener('click', () => {
     // change on  of view  increase in amdabad location
     let view = document.querySelector('.view2');
     initeal_view6 += 1;
-    console.log(initeal_view6);
-    view.innerHTML = `<a>${initeal_view6} views</a>`;
+     view.innerHTML = `<a>${initeal_view6} views</a>`;
     // click a job dhaka jaba
 
     let detail = document.getElementById('detail');
@@ -173,7 +171,7 @@ let medium = [
 ];
 
 let indecator = false;
-
+let arr=[];
  share.addEventListener('click', () => {
     // ***  with out arry using fatch api
     //     fetch("https://api.messagemedia.com ", {
@@ -183,48 +181,51 @@ let indecator = false;
     //         console.log(data);
     //     })
 
-    if (indecator) {
+    if (indecator===true) {
         indecator = false;
     }
     else {
         indecator = true;
     }
+for(let i of medium){
+arr.push(i.name);
+}
+console.log(arr);
     // console.log(indecator)
     if (indecator === true) {
-for(let e of medium ){   
-
+        console.log(indecator);
+for(let e of medium ){ 
+ 
              let div21 = document.createElement('div');
-            div21.setAttribute('id', 'mediamname');
+            div21.setAttribute('id', 'middleempty');
 
             div21.innerHTML = `<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
    
     <p >${e.name}</p>
+
     </div>`
             let empty = document.getElementById('empty');
              empty.insertAdjacentHTML('afterend', div21.outerHTML);
+             
          }
-        
+          
     }
       
 
      else {
         sharemain.style.display = 'none';
         // janno 1 bar click a visible 2nd ta disapear then fully disapper on click event a
-
-        // var middleempty=document.createElement('div');
-        // middleempty.setAttribute("id","middleempty");
-        // middleempty.innerHTML=`<p id="empty"></p>`;
-        // sharemain.insertAdjacentHTML('afterend',middleempty.outerHTML);
-
+ 
+         
  }
   
 
 })
-share.addEventListener('click', (e) => {
-    e.preventDefault();
+// share.addEventListener('click', (e) => {
+//     e.preventDefault();
 
-    window.history.back();
- })
+//     window.history.back();
+//  })
 
 
 // above ternery or below dblclick
@@ -253,8 +254,10 @@ share1.addEventListener('click', () => {
 
         empty.insertAdjacentHTML('afterend', div2.outerHTML);
     })
+    
 
 })
+ 
 // 3 no share button
 
 let share2 = document.getElementById('share2');
@@ -380,32 +383,37 @@ post.addEventListener('submit', (e) => {
 
 
 //  boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
- let jobs=document.querySelector('.jobss');
+ let jobs=document.querySelectorAll('.querys');
  let values=false;
 
- jobs.addEventListener('click',(e)=>{
-    if(values==false){
-        values=true;
-    }
-    else{
-        values=false;
+    jobs.forEach(element => {
+         element.addEventListener('click',(e)=>{
 
-    }
+    values=true;
+
+    
     // e.preventDefault();
           let postdata=document.getElementById('postdata');
           console.log(values)
           if(values==true){
     postdata.style.visibility='visible';
-    let text1=document.getElementById('text1');
-   text1.focus();
+    let te=document.getElementById('text11');
+    te.focus();
           }
-          else{
-            let postdata=document.getElementById('postdata');
-            postdata.style.visibility='hidden';
-          }
+           
      
+        });
  })
  
+let jobss=document.querySelector('.jobss');
+jobss.addEventListener('click',()=>{
+    if(    values=true){
+        let postdata=document.getElementById('postdata');
+        postdata.style.visibility='hidden';
+        values=false;
+    }
+})
+
 //  insteed of dbl click if else use
   // boostrap ar class ar id ta kaj hoba na new id dita hoba kaj koranor janno
   let alljobs=document.querySelector('.alljobs');
@@ -696,5 +704,73 @@ function validateSignIn1() {
 }
 
 
+// for youtubu vedios
+// 1.for search
+// let searchurl=`https://youtube.googleapis.com/youtube/v3/search?maxResults=30&q=${qury}&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s`
 
+// let url1 = 'https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s&channelId=UCwfaAHy4zQUb2APNOGXUCCA&part=snippet,id&order=date&maxResults=10';
+
+//2. for all popular vedio
+let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s&maxResults=2';
+
+function fun(data) {
+  fetch(url)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`Network response was not ok: ${res.statusText}`);
+      }
+      return res.json();
+    })
+    .then(data => {
+      console.log(data);
+      let xy=document.querySelector('.dout');
+xy.innerHTML=null;
+
+// for url 1
+// let {items}=data;
+// let {id}=e;
+// emded/${id.vedioId}
+      let {items}=data;
+      for (let e of items) {
+          let a=document.createElement('div');
+          
+    a.setAttribute('id','vedio');
+a.innerHTML=` <iframe  style="width:200px;height:200px;display:flex;flex-wrap:wrap;"   object-cover' src=https://www.youtube.com/embed/${e.id} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+`
+// let xy=document.querySelector('.dout');
+// belllow two same work perform 
+// xy.insertAdjacentHTML('afterbegin',a.outerHTML);
+xy.append(a);
+}
+
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+}
+
+fun();
+// https://youtube.googleapis.com/youtube/v3/search?maxResults=10&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s
+
+// for scarch on youtube
+async function seachh(){
+  
+     let qury=document.getElementById('in').value;
+   let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=${qury}&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s`);
+    let data=await res.json();
+     let {items}=data;
+     console.log(items)
+     for (let ei of items) {
+ console.log(ei.id.vedioId);
+         let a=document.createElement('div');
+        
+  a.setAttribute('id1','vedio1');
+a.innerHTML=` <iframe  style="width:200px;height:200px;display:flex;flex-wrap:wrap;"   object-cover' src=https://www.youtube.com/embed/${ei.id.vedioId} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+`
+
+ let xy=document.querySelector('.dout1');
+// belllow two same work perform 
+// xy.insertAdjacentHTML('afterbegin',a.outerHTML);
+xy.append(a);
+}}
 

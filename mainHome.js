@@ -289,18 +289,39 @@ if(revalue==true){
     console.log(e.name);
     let div11=document.createElement('div');
     div11.setAttribute('id','div12');
-    div11.innerHTML=`<div id="rebutton" style="display: flex;justify-content: space-between;align-items: center; margin:10px">
+    div11.innerHTML=`<div   style="display: flex;justify-content: space-between;align-items: center; margin:10px">
     <div style="display: flex;">
     <img src=${e.img} alt="">
     <a>${e.name}</a>
                    
     </div>
-    <button class="rounded-pill " >${e.button}</button>
-
+    <button class="rounded-pill  rebutton"  >${e.button}</button>
+     
 </div>`
+ 
 let pi=document.getElementById('pi');
 pi.insertAdjacentHTML('afterend',div11.outerHTML);
  });
+//****   dynamicaly follw button create hocha tahala dynamicaly created ele opr 
+// eventlistner lagata hola jakhana create hocha sakhana envet likta hoba
+ let follo=document.querySelectorAll('.rebutton');
+//  above query selector retuen kora arry
+// each element opor event laga ta hola
+ follo.forEach(element=>{ 
+    element.addEventListener('click',(e)=>{
+ console.log('ankur')
+    e.preventDefault();
+    if(element.innerText==='Follow'){
+    element.innerText=`Followed`;
+    }
+    else{
+        element.innerText=`Follow`;
+
+    }
+})
+})
+
+
 }
 
 
@@ -674,10 +695,4 @@ function validateSignIn1() {
     return true;
 }
  
-// let rebutton=document.getElementById('rebutton');
-// rebutton.addEventListener('click',(e)=>{
-//     let rebutton=document.getElementById('#rebutton');
-
-//     e.preventDefault();
-//     rebutton.innerText=`Followed`;
-// })
+ 
