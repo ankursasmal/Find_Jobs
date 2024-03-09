@@ -46,10 +46,9 @@ let job = [
 //   button view amadabad click korla job description render
 let button1 = document.getElementById('button1');
 let sub = document.getElementById('sub');
-let result = document.getElementById('result');
-let button2 = document.getElementById('button2');
-let result1 = document.getElementById('result');
-
+ let button2 = document.getElementById('button2');
+  
+ 
 //  view increment in scroll event
 var k = 1000;
 let initeal_view3 = 3.2 * k;
@@ -72,14 +71,13 @@ Education.addEventListener('mouseover', () => {
 
 });
 
-// view initial value of amdabad
+// view initial value of updated
 let initeal_view = 1.4 * k;
 
 //1.  **** get req ta value ascha display hocha
 // get req ta no header
 
-button1.addEventListener('click', (e) => {
-    e.preventDefault();
+     function funbutton(){
     fetch("https://www.arbeitnow.com/api/job-board-api", {
         method: 'GET',
 
@@ -90,14 +88,14 @@ button1.addEventListener('click', (e) => {
     }).then(res => {
         return res.json();
     })
-        .then(function (da) {
-            console.log(da);
+        .then( da=> {
+             // data obj under a tai distructure
             let { data } = da;
             // let {ja arr different obj undera sai name }=da;
             for (let ei of data) {
-                var d = document.createElement('div');
-                d.setAttribute('class', "sub");
-                d.innerHTML = ` <div style="display: flex; justify-content: space-between;flex-direction: column;border: .5px solid rgb(145, 230, 76);padding: 5px; margin:7px ">
+                let de = document.createElement('div');
+                de.setAttribute('class', "sub");
+                de.innerHTML = ` <div style="display: flex; justify-content: space-between;flex-direction: column;border: .5px solid rgb(145, 230, 76);padding: 5px; margin:7px ">
              
            <a>  <b>Company Name:</b>${ei.company_name}  </a>
 <a ><b>Title:</b>${ei.title}</a>
@@ -106,38 +104,65 @@ button1.addEventListener('click', (e) => {
 <a><b>location:</b>${ei.location}</a>
            </div>
                 `
-                let some = document.getElementById('some');
-                some.insertAdjacentHTML('afterend', d.outerHTML)
+                let addval = document.getElementById('addval');
+                addval.insertAdjacentHTML('afterend', de.outerHTML)
 
             }
 
+        }).catch(e=>{
+            console.log(e);
         })
+
+        let some = document.getElementById('some');
+
+        some.style='visibility:hidden;display:none';
+
+    
+    }
+    funbutton();
+    
+     let resultvalue=false;  
+    button1.addEventListener('click', (e) => {
+ e.preventDefault();
+        if(resultvalue===false){
+            resultvalue=true;
+        }
+        else{
+            resultvalue=false;
+
+        }
+        if(resultvalue){
+            let some = document.getElementById('some');
+
+            let view = document.querySelector('.view1');
+            initeal_view += 1;
+             view.innerHTML = `<a>${initeal_view} views</a>`;
+                  
+            some.style='visibility:visible;display:block';
+            button1.innerText='Hide'; 
+
+         }
+        if(!resultvalue){
+            let some = document.getElementById('some');
+
+            some.style='visibility:hidden;display:none';
+            button1.innerText='View'; 
+
+        }
+
 })
+ 
 
-button1.addEventListener('dblclick', (e) => {
-    e.preventDefault();
-    let re = document.getElementById('result');
-    re.style.display = 'none';
-
-
-})
 
 let initeal_view6 = 1.4 * k;
+let resultvalue1=false;
 
-//2.****  normal arry ta data store kora display 
-
-button2.addEventListener('click', () => {
-    // change on  of view  increase in amdabad location
-    let view = document.querySelector('.view2');
-    initeal_view6 += 1;
-     view.innerHTML = `<a>${initeal_view6} views</a>`;
-    // click a job dhaka jaba
-
-    let detail = document.getElementById('detail');
-
-    job.forEach(e => {
+//  all job arry or api thaka nia display
+function jobview(){
+      
+    for(let e of job ){ 
         //  loop ar under create korta hoba div na hola akta div a barbar innerhtml a change hocha
-        var d3 = document.createElement('div');
+        let d3 = document.createElement('div');
         d3.setAttribute('class', "sub1");
         d3.innerHTML = `
  <div style="display: flex; justify-content: space-between;flex-direction: column;border: .5px solid rgb(145, 230, 76);padding: 5px; margin:7px ">
@@ -147,14 +172,48 @@ button2.addEventListener('click', () => {
      <a>title:${e.title}  </a>
      </div>
      `
-        let some = document.getElementById('some1');
-        some.insertAdjacentHTML('afterend', d3.outerHTML)
+        let some1 = document.getElementById('some1');
+        some1.insertAdjacentHTML('afterend', d3.outerHTML)
+ }
+ let result1 = document.getElementById('result1');
 
+ result1.style='visibility:hidden;display:none';
+     
+ 
+}
+jobview();
+// display none opp display block event listner through handel hoda
+     button2.addEventListener('click', (e) => {
+ e.preventDefault();
+        if(resultvalue1===false){
+            resultvalue1=true;
+        }
+        else{
+            resultvalue1=false;
 
-    })
+        }
+        if(resultvalue1){
+            let result1 = document.getElementById('result1');
 
+             // change on  of view  increase in amdabad location
+    let view = document.querySelector('.view2');
+    initeal_view6 += 1;
+     view.innerHTML = `<a>${initeal_view6} views</a>`;
+            result1.style='visibility:visible;display:block';
+            button2.innerText='Hide'; 
+
+         }
+        if(!resultvalue1){
+            let result1 = document.getElementById('result1');
+
+            result1.style='visibility:hidden;display:none';
+            button2.innerText='View'; 
+
+        }
 
 })
+
+ 
 
 
 // whatapp a click korla option render hoba
@@ -165,36 +224,17 @@ let share = document.getElementById('share');
 
 let medium = [
     { type: 'Massage', name: 'WhatsApp', example: 'Hey, how are you?' },
-    { type: 'Massage', name: 'Facebook Messenger', example: 'Nice to meet you!' },
+    { type: 'Massage', name: ' Messenger', example: 'Nice to meet you!' },
     { type: 'Image Share', name: 'Instagram', example: 'Check out this beautiful photo!' },
     { type: 'Image Share', name: 'Snapchat', example: 'Sending you a fun snap!' }
 ];
 
+// 1 no share
 let indecator = false;
-let arr=[];
- share.addEventListener('click', () => {
-    // ***  with out arry using fatch api
-    //     fetch("https://api.messagemedia.com ", {
-    // 	method: 'GET',
-
-    // }).then(res=>res.json()).then(data=>{
-    //         console.log(data);
-    //     })
-
-    if (indecator===true) {
-        indecator = false;
-    }
-    else {
-        indecator = true;
-    }
-for(let i of medium){
-arr.push(i.name);
-}
-console.log(arr);
-    // console.log(indecator)
-    if (indecator === true) {
-        console.log(indecator);
-for(let e of medium ){ 
+  
+    // step-1  function under arry or api value ka dynamcaly lika end a fun ka call sa cas 1 bar create hobe
+     function fun11(){
+ for(let e of medium ){ 
  
              let div21 = document.createElement('div');
             div21.setAttribute('id', 'middleempty');
@@ -208,17 +248,31 @@ for(let e of medium ){
              empty.insertAdjacentHTML('afterend', div21.outerHTML);
              
          }
+        //  intialy 
+         sharemain.style='visibility:hidden;display:none';
+
           
     }
+    //step-2 function call
+    fun11();
       
+//step-3  event listner handel
+ share.addEventListener('click', () => {
+    if (indecator===true) {
+        indecator = false;
+    }
+    else {
+        indecator = true;
+    }
+    if(indecator){
+        // disply ->none opposit display->block
+        sharemain.style='visibility:visible;display:block';
 
-     else {
-        sharemain.style.display = 'none';
-        // janno 1 bar click a visible 2nd ta disapear then fully disapper on click event a
- 
-         
- }
-  
+    }
+    if(!indecator){
+        sharemain.style='visibility:hidden;display:none';
+
+    }
 
 })
 // share.addEventListener('click', (e) => {
@@ -228,78 +282,128 @@ for(let e of medium ){
 //  })
 
 
-// above ternery or below dblclick
+ 
 
-// share.addEventListener('dblclick',()=>{
-//     let   sharemain = document.getElementById('sharemain');
-//     sharemain.style.display='none';
-//  })
 
 // 2 no share button
-
+// **** api to data but casa 1 bar create hoba ae casa div api thaka asa value outside of event functo
+//  create hoccha like {ticketbooking.js }..
+//*** poblemb  =>{initialy hidden kora jaba na} solution=>{fun under purota ka wrap korla inital kora jaba}
 let share1 = document.getElementById('share1');
+ 
+function normalwrap(){
+    let div2 = document.createElement('div');
+            div2.setAttribute('id', 'mediamname');
+    
+    for(let e of medium){       
+                div2.innerHTML = `<div style=" display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
+           
+            <p >${e.name}</p>
+            </div>`
+                 let empty = document.getElementById('empty3');
+                  empty.insertAdjacentHTML('afterend',div2.outerHTML);
+            }    
+            let sharehide = document.querySelector('.sharehide');
+    
+            sharehide.style='visibility:hidden;display:none';
+    
+        }
+        normalwrap();
+    // funtion must cholba 
+ share1.addEventListener('click', () => {
+    let sharehide = document.querySelector('.sharehide');
 
-share1.addEventListener('click', () => {
-
-
-    medium.forEach((e) => {
-        let div2 = document.createElement('div');
-        div2.setAttribute('id', 'mediamname');
-
-        div2.innerHTML = `<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
-   
-    <p >${e.name}</p>
-    </div>`
-        let empty = document.getElementById('empty3');
-
-        empty.insertAdjacentHTML('afterend', div2.outerHTML);
+    sharehide.style='visibility:visible;display:block';
+    
     })
+    share1.addEventListener('dblclick', () => {
+
+        let sharehide = document.querySelector('.sharehide');
+
+        sharehide.style='visibility:hidden;display:none';
+                     
+            })
     
 
-})
- 
+  
 // 3 no share button
-
+// like 2 no but using true false
 let share2 = document.getElementById('share2');
-
-share2.addEventListener('click', () => {
-
-
-    medium.forEach((e) => {
-        let div2 = document.createElement('div');
+ 
+function normalwrap1(){
+let div2 = document.createElement('div');
         div2.setAttribute('id', 'mediamname');
 
-        div2.innerHTML = `<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
-   
-    <p >${e.name}</p>
-    </div>`
-        let empty = document.getElementById('empty1');
+for(let e of medium){       
+            div2.innerHTML = `<div style=" display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
+       
+        <p >${e.name}</p>
+        </div>`
+             let empty = document.getElementById('empty1');
+              empty.insertAdjacentHTML('afterend',div2.outerHTML);
+        }    
+        let forhide = document.querySelector('.forhide');
 
-        empty.insertAdjacentHTML('afterend', div2.outerHTML);
+        forhide.style='visibility:hidden;display:none'        // Set the initial visibility to hidden
+
+    }
+    normalwrap1();
+    // funtion must cholba 
+    let mediavalue=false;
+ share2.addEventListener('click', () => {
+    let forhide = document.querySelector('.forhide');
+if(mediavalue){
+    mediavalue=false;  
+ 
+}
+else{
+    mediavalue=true;
+}
+if(mediavalue){
+    forhide.style='visibility:visible;display:block';
+}
+if(!mediavalue){
+    forhide.style='visibility:hidden;display:none';
+}
     })
+     
+    
 
-})
 // 4 no share button
-
+// same as 1,2 but using terneary
 let share3 = document.getElementById('share3');
-
-share3.addEventListener('click', () => {
-
-
-    medium.forEach((e) => {
-        let div2 = document.createElement('div');
+ 
+function normalwrap2(){
+let div2 = document.createElement('div');
         div2.setAttribute('id', 'mediamname');
 
-        div2.innerHTML = `<div style="display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228); ">
-   
-    <p >${e.name}</p>
-    </div>`
-        let empty = document.getElementById('empty2');
+for(let e of medium){       
+            div2.innerHTML = `<div style=" display: flex;align-items: center;margin-right:40px;font-size: medium; margin-top:10px;color: rgb(85, 238, 228);overflow-x:hidden; ">
+       
+        <p >${e.name}</p>
+        </div>`
+             let empty = document.getElementById('empty2');
+              empty.insertAdjacentHTML('afterend',div2.outerHTML);
+        }    
+        let hideterneary = document.querySelector('.hideterneary');
 
-        empty.insertAdjacentHTML('afterend', div2.outerHTML);
+        hideterneary.style='visibility:hidden;display:none'        // Set the initial visibility to hidden
+
+    }
+    normalwrap2();
+    // funtion must cholba 
+  share3.addEventListener('click', () => {
+    let hideterneary = document.querySelector('.hideterneary');
+    // hideterneary.style='visibility:visible;display:none'? hideterneary.style='visibility:hidden;display:none': hideterneary.style='visibility:visible;display:block';
+    hideterneary.style='visibility:vissible;display:block'        // Set the initial visibility to hidden
+
     })
-
-})
+    share3.addEventListener('dblclick', () => {
+        let hideterneary = document.querySelector('.hideterneary');
+        // hideterneary.style='visibility:visible;display:none'? hideterneary.style='visibility:hidden;display:none': hideterneary.style='visibility:visible;display:block';
+        hideterneary.style='visibility:hidden;display:none'        // Set the initial visibility to hidden
+    
+        })
 
 let searchbar = document.getElementById('searchbar');
 // a casa enter by default event enter kola enventhandelar stop hoa jaba
@@ -705,15 +809,16 @@ function validateSignIn1() {
 
 
 // for youtubu vedios
-// 1.for search
-// let searchurl=`https://youtube.googleapis.com/youtube/v3/search?maxResults=30&q=${qury}&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s`
+// 1.for search {for any serch }
+// let searchurl=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${qury}&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s`
 
+// channel id hisaba vedio
 // let url1 = 'https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s&channelId=UCwfaAHy4zQUb2APNOGXUCCA&part=snippet,id&order=date&maxResults=10';
 
-//2. for all popular vedio
-let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s&maxResults=2';
+//2. for all popular vedio {all vedio}
+let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyD9k1boQl04rNgL3zHK6dVwrBNMN_rFOxc&maxResults=10';
 
-function fun(data) {
+function fun() {
   fetch(url)
     .then(res => {
       if (!res.ok) {
@@ -756,21 +861,23 @@ fun();
 async function seachh(){
   
      let qury=document.getElementById('in').value;
-   let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=${qury}&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s`);
+   let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${qury}&key=AIzaSyD9k1boQl04rNgL3zHK6dVwrBNMN_rFOxc`);
     let data=await res.json();
-     let {items}=data;
-     console.log(items)
+          console.log(data)
+let {items}=data;
      for (let ei of items) {
- console.log(ei.id.vedioId);
-         let a=document.createElement('div');
+    let {id}=ei;
+           let a=document.createElement('div');
         
   a.setAttribute('id1','vedio1');
-a.innerHTML=` <iframe  style="width:200px;height:200px;display:flex;flex-wrap:wrap;"   object-cover' src=https://www.youtube.com/embed/${ei.id.vedioId} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
-`
+a.innerHTML=` <iframe  style="width:400px;height:200px;display:flex;flex-wrap:wrap;"   object-cover' src=https://www.youtube.com/embed/${id.videoId} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  `
 
  let xy=document.querySelector('.dout1');
 // belllow two same work perform 
 // xy.insertAdjacentHTML('afterbegin',a.outerHTML);
 xy.append(a);
-}}
+}
+
+}
+
 
