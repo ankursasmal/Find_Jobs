@@ -444,7 +444,7 @@ let post = document.getElementById('postform');
 post.addEventListener('submit', (e) => {
     e.preventDefault();
     let select1 = document.getElementById('select1').value;
-    let text1 = document.getElementById('text1').value;
+    let text1 = document.getElementById('text11').value;
     fetch("https://jsonplaceholder.typicode.com/posts", {
         method: 'POST',
         body: JSON.stringify({
@@ -534,7 +534,7 @@ jobss.addEventListener('click',()=>{
 
            let postdata=document.getElementById('postdata');
      postdata.style.visibility='visible';
-     let text1=document.getElementById('text1');
+     let text1=document.getElementById('text11');
    text1.focus();
     }
     else{
