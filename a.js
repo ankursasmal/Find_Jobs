@@ -412,6 +412,9 @@ searchbar.addEventListener('change', (e) => {
     let jobs = document.getElementById('jobs');
     jobs.innerHTML = `<a>${e.target.value},India</a>`;
     searchbar.value = "";
+    let button1  = document.getElementById('button1');
+     button1.focus();
+
 })
 
 // red circle on click scarch bar focas hoba
@@ -807,77 +810,83 @@ function validateSignIn1() {
     return true;
 }
 
+ 
+ 
 
-// for youtubu vedios
-// 1.for search {for any serch }
-// let searchurl=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${qury}&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s`
 
-// channel id hisaba vedio
-// let url1 = 'https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s&channelId=UCwfaAHy4zQUb2APNOGXUCCA&part=snippet,id&order=date&maxResults=10';
 
-//2. for all popular vedio {all vedio}
-let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyD9k1boQl04rNgL3zHK6dVwrBNMN_rFOxc&maxResults=10';
 
-function fun() {
-  fetch(url)
-    .then(res => {
-      if (!res.ok) {
-        throw new Error(`Network response was not ok: ${res.statusText}`);
-      }
-      return res.json();
-    })
-    .then(data => {
-      console.log(data);
-      let xy=document.querySelector('.dout');
-xy.innerHTML=null;
 
-// for url 1
-// let {items}=data;
-// let {id}=e;
-// emded/${id.vedioId}
-      let {items}=data;
-      for (let e of items) {
-          let a=document.createElement('div');
+// // for youtubu vedios
+// // 1.for search {for any serch }
+// // let searchurl=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${qury}&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s`
+
+// // channel id hisaba vedio
+// // let url1 = 'https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s&channelId=UCwfaAHy4zQUb2APNOGXUCCA&part=snippet,id&order=date&maxResults=10';
+
+// //2. for all popular vedio {all vedio}
+// let url='https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&key=AIzaSyD9k1boQl04rNgL3zHK6dVwrBNMN_rFOxc&maxResults=10';
+
+// function fun() {
+//   fetch(url)
+//     .then(res => {
+//       if (!res.ok) {
+//         throw new Error(`Network response was not ok: ${res.statusText}`);
+//       }
+//       return res.json();
+//     })
+//     .then(data => {
+//       console.log(data);
+//       let xy=document.querySelector('.dout');
+// xy.innerHTML=null;
+
+// // for url 1
+// // let {items}=data;
+// // let {id}=e;
+// // emded/${id.vedioId}
+//       let {items}=data;
+//       for (let e of items) {
+//           let a=document.createElement('div');
           
-    a.setAttribute('id','vedio');
-a.innerHTML=` <iframe  style="width:200px;height:200px;display:flex;flex-wrap:wrap;"   object-cover' src=https://www.youtube.com/embed/${e.id} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
-`
-// let xy=document.querySelector('.dout');
-// belllow two same work perform 
-// xy.insertAdjacentHTML('afterbegin',a.outerHTML);
-xy.append(a);
-}
+//     a.setAttribute('id','vedio');
+// a.innerHTML=` <iframe  style="width:200px;height:200px;display:flex;flex-wrap:wrap;"   object-cover' src=https://www.youtube.com/embed/${e.id} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+// `
+// // let xy=document.querySelector('.dout');
+// // belllow two same work perform 
+// // xy.insertAdjacentHTML('afterbegin',a.outerHTML);
+// xy.append(a);
+// }
 
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-}
+//     })
+//     .catch(error => {
+//       console.error('Error fetching data:', error);
+//     });
+// }
 
-fun();
-// https://youtube.googleapis.com/youtube/v3/search?maxResults=10&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s
+// fun();
+// // https://youtube.googleapis.com/youtube/v3/search?maxResults=10&key=AIzaSyAxTE23s4UXmVX2XYfi1dZbNx1pJxrsj2s
 
-// for scarch on youtube
-async function seachh(){
+// // for scarch on youtube
+// async function seachh(){
   
-     let qury=document.getElementById('in').value;
-   let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${qury}&key=AIzaSyD9k1boQl04rNgL3zHK6dVwrBNMN_rFOxc`);
-    let data=await res.json();
-          console.log(data)
-let {items}=data;
-     for (let ei of items) {
-    let {id}=ei;
-           let a=document.createElement('div');
+//      let qury=document.getElementById('in').value;
+//    let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${qury}&key=AIzaSyD9k1boQl04rNgL3zHK6dVwrBNMN_rFOxc`);
+//     let data=await res.json();
+//           console.log(data)
+// let {items}=data;
+//      for (let ei of items) {
+//     let {id}=ei;
+//            let a=document.createElement('div');
         
-  a.setAttribute('id1','vedio1');
-a.innerHTML=` <iframe  style="width:400px;height:200px;display:flex;flex-wrap:wrap;"   object-cover' src=https://www.youtube.com/embed/${id.videoId} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  `
+//   a.setAttribute('id1','vedio1');
+// a.innerHTML=` <iframe  style="width:400px;height:200px;display:flex;flex-wrap:wrap;"   object-cover' src=https://www.youtube.com/embed/${id.videoId} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  `
 
- let xy=document.querySelector('.dout1');
-// belllow two same work perform 
-// xy.insertAdjacentHTML('afterbegin',a.outerHTML);
-xy.append(a);
-}
+//  let xy=document.querySelector('.dout1');
+// // belllow two same work perform 
+// // xy.insertAdjacentHTML('afterbegin',a.outerHTML);
+// xy.append(a);
+// }
 
-}
+// }
 
 
