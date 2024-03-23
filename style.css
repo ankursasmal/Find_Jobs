@@ -7,6 +7,7 @@ body{
    #imgbtn1 {
       display: none;
       visibility: hidden;
+      color: #007bff;
    }
 
    .hide2 {
@@ -97,7 +98,8 @@ body{
       font: IBM Plex Sans;
       font-size: 30px;
       line-height: 46.8px;
-      color: white;
+      color: rgb(55, 55, 180);
+      
    }
    #imgtxt {
       position: absolute;
@@ -110,8 +112,8 @@ body{
       font: IBM Plex Sans;
       font-size: 13px !important;
       line-height: 23.4px;
-      color: white;
-   
+      color: rgb(55, 55, 180);
+   font-weight: bold;
    }
    nav {
       height: 16px !important;
@@ -149,7 +151,8 @@ nav {
       font: IBM Plex Sans;
       font-size: 35px;
       line-height: 46.8px;
-      color: white;
+          color: rgb(55, 55, 180);
+      ;
    }
    #imgtxt {
       position: absolute;
@@ -162,8 +165,9 @@ nav {
       font: IBM Plex Sans;
       font-size: 22px;
       line-height: 23.4px;
-      color: white;
-   
+      color: rgb(55, 55, 180);
+      font-weight: bold;
+
    }
    nav {
       height: 66px !important;
@@ -217,6 +221,8 @@ nav {
 
    #imgbtn1 {
       top: 30px !important;
+      color: #007bff;
+
    }
 
    #imgbtn2 {
